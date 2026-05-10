@@ -691,7 +691,7 @@
       </button>
     </div>
     <div class="hero-meta">
-      <span>MILANO, ITALIA</span>
+      <span>BRESCIA, ITALIA</span>
       <span>SCROLL TO EXPLORE</span>
     </div>
   </section>
@@ -699,19 +699,17 @@
   <!-- TICKER -->
   <div class="ticker-wrap">
     <div class="ticker">
-      <span>MODELING</span><span class="dot">·</span>
-      <span>9.19° E</span><span class="dot">·</span>
+      <span>3D MODELING</span><span class="dot">·</span>
+      <span>EDITORIAL</span><span class="dot">·</span>
       <span>PHOTO RETOUCHING</span><span class="dot">·</span>
-      <span>FASHION</span><span class="dot">·</span>
-      <span>BIJOUX</span><span class="dot">·</span>
+      <span>3D FASHION MODELING </span><span class="dot">·</span>
       <span>ILLUSTRATION</span><span class="dot">·</span>
       <span>BRANDING</span><span class="dot">·</span>
       <!-- duplicate for seamless loop -->
-      <span>MODELING</span><span class="dot">·</span>
-      <span>9.19° E</span><span class="dot">·</span>
+      <span>3D MODELING</span><span class="dot">·</span>
+      <span>EDITORIAL</span><span class="dot">·</span>
       <span>PHOTO RETOUCHING</span><span class="dot">·</span>
-      <span>FASHION</span><span class="dot">·</span>
-      <span>BIJOUX</span><span class="dot">·</span>
+      <span>3D FASHION MODELING</span><span class="dot">·</span>
       <span>ILLUSTRATION</span><span class="dot">·</span>
       <span>BRANDING</span><span class="dot">·</span>
     </div>
@@ -734,39 +732,43 @@
     <div>
       <div class="work-card">
         <div class="work-card-img pi-1" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ 3D RENDER ]</span>
+          <img src="IMMAGINI/SPIREA SILVER 1920X1080.png" alt="Piercing Collection" style="width:100%;height:100%;object-fit:cover;">
         </div>
       </div>
       <div class="work-card-info">
-        <h3 class="work-card-title">Bijoux Collection SS25</h3>
+        <h3 class="work-card-title">Piercing Collection </h3>
         <p class="work-card-cat">3D MODELING</p>
       </div>
     </div>
-    <!-- Card 2 — split before/after -->
-    <div>
-      <div class="work-card">
-        <div class="split-card">
-          <div class="split-half before">BEFORE</div>
-          <div class="split-divider"></div>
-          <div class="split-half after">AFTER</div>
-          <span class="split-label">AFTER</span>
-        </div>
+   <!-- Card 2 — split before/after -->
+<div>
+  <div class="work-card">
+    <div class="split-card">
+      <div class="split-half before" style="background:none; padding:0; overflow:hidden;">
+        <img src="IMMAGINI/DSC_0124.JPG" style="width:100%; height:100%; object-fit:cover;">
       </div>
-      <div class="work-card-info">
-        <h3 class="work-card-title">Beauty Editorial Retouching</h3>
-        <p class="work-card-cat">PHOTO RETOUCHING</p>
+      <div class="split-divider"></div>
+      <div class="split-half after" style="background:none; padding:0; overflow:hidden;">
+        <img src="IMMAGINI/DSC_0124_post.jpg" style="width:100%; height:100%; object-fit:cover;">
       </div>
+      <span class="split-label">AFTER</span>
     </div>
+  </div>
+  <div class="work-card-info">
+    <h3 class="work-card-title">Editorial Project</h3>
+    <p class="work-card-cat">PHOTO RETOUCHING</p>
+  </div>
+</div>
     <!-- Card 3 -->
     <div>
       <div class="work-card">
-        <div class="work-card-img pi-3" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ ILLUSTRATION ]</span>
+        <div class="work-card-img pi-3" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background-color:rgb(255, 255, 255); overflow:hidden;">
+         <img src="IMMAGINI/BOX.jpg" alt="Amarena logo" style="width:100%; height:100%; object-fit:cover; border:none; outline:none;">
         </div>
       </div>
       <div class="work-card-info">
-        <h3 class="work-card-title">Botanical Bijoux Illustration</h3>
-        <p class="work-card-cat">ILLUSTRATION</p>
+        <h3 class="work-card-title">Amarena logo </h3>
+        <p class="work-card-cat">BRANDING</p>
       </div>
     </div>
   </div>
@@ -779,7 +781,7 @@
       <span class="footer-nav-link" onclick="showPage('about')">ABOUT</span>
       <span class="footer-nav-link" onclick="showPage('contact')">CONTACT</span>
     </nav>
-    <span class="footer-copy">© 2026 — Milano, Italia</span>
+    <span class="footer-copy">© 2026 — Brescia, Italia</span>
   </footer>
 </div>
 
@@ -795,8 +797,9 @@
     <button class="filter-btn active" onclick="filterPortfolio('all', this)">ALL</button>
     <button class="filter-btn" onclick="filterPortfolio('photo-retouching', this)">PHOTO RETOUCHING</button>
     <button class="filter-btn" onclick="filterPortfolio('3d-modeling', this)">3D MODELING</button>
+    <button class="filter-btn" onclick="filterPortfolio('3d-modeling', this)">3D FASHION MODELING</button>
     <button class="filter-btn" onclick="filterPortfolio('illustration', this)">ILLUSTRATION</button>
-    <button class="filter-btn" onclick="filterPortfolio('catalog', this)">CATALOG / EDITORIAL</button>
+    <button class="filter-btn" onclick="filterPortfolio('catalog', this)">EDITORIAL</button>
     <button class="filter-btn" onclick="filterPortfolio('branding', this)">BRANDING</button>
   </div>
 
@@ -927,8 +930,7 @@
     <!-- Photo -->
     <div class="about-photo">
       <div class="about-photo-placeholder">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/><path d="M6 28c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/></svg>
-        <span>YOUR PHOTO HERE</span>
+        <img src="IMMAGINI/Foto_cv.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
       </div>
     </div>
 
@@ -936,11 +938,13 @@
     <div class="about-content">
       <h2 class="about-name">Alessia</h2>
       <p class="about-bio">
-        A graphic designer and 3D modeler based in Italy, currently completing an internship at a bijoux and fashion accessories company. My work sits at the crossroads of high-end editorial design and technical 3D precision—from photo retouching for luxury catalogs to building intricate jewelry models in Rhinoceros 8.
-      </p>
-      <p class="about-bio">
-        I believe in the power of detail. Every curve in a 3D model, every shadow in a retouched image, every typographic choice in a catalog tells a story. My goal is to bridge the tactile world of Italian craftsmanship with the infinite possibilities of digital design.
-      </p>
+      I'm a graphic designer and 3D modeler based in Brescia—but my mind is always somewhere between a 3D model and a layout. <br>
+      I studied graphic design at the Santa Giulia Academy of Fine Arts, and from there I decided to venture into another field: I'm currently specializing in 3D Fashion Design at the ITS Academy Macchina Lonati, while I'm interning at Barbieri Creazioni S.p.A., an Italian jewelry and fashion accessories company.
+</p>
+<p class="about-bio">
+  My favorite place? That strange corner where editorial design meets the technical precision of 3D. Photo editing for catalogs, jewelry models built curve by curve in Rhinoceros 8, digital clothing sewn in CLO3D—every project is a different puzzle, and I can't leave a single piece out of place. <br>
+  I'm obsessed with detail—in the best sense of the word. Because every shadow in an image, every node in a mesh, every typographic choice is never random: it tells a story. And I want you to feel it.
+</p>
 
       <p class="toolkit-label">THE TOOLKIT</p>
 
@@ -955,29 +959,29 @@
         <div class="skill-row">
           <span class="skill-name">ADOBE ILLUSTRATOR</span>
           <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="90%"></div></div>
-            <span class="skill-pct">90%</span>
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="95%"></div></div>
+            <span class="skill-pct">95%</span>
           </div>
         </div>
         <div class="skill-row">
           <span class="skill-name">ADOBE INDESIGN</span>
           <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="85%"></div></div>
-            <span class="skill-pct">85%</span>
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="95%"></div></div>
+            <span class="skill-pct">95%</span>
           </div>
         </div>
         <div class="skill-row">
           <span class="skill-name">RHINOCEROS 8</span>
           <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="80%"></div></div>
-            <span class="skill-pct">80%</span>
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="90%"></div></div>
+            <span class="skill-pct">90%</span>
           </div>
         </div>
         <div class="skill-row">
           <span class="skill-name">CLO3D</span>
           <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="75%"></div></div>
-            <span class="skill-pct">75%</span>
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="90%"></div></div>
+            <span class="skill-pct">90%</span>
           </div>
         </div>
         <div class="skill-row">
@@ -988,11 +992,12 @@
           </div>
         </div>
       </div>
-
-      <button class="download-btn">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M7 9l-3-3M7 9l3-3M1 11h12v2H1z" stroke="currentColor" stroke-width="1.2"/></svg>
-        DOWNLOAD CV
-      </button>
+<a href="Bosio_Alessia_Cv.pdf" download>
+  <button class="download-btn">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M7 9l-3-3M7 9l3-3M1 11h12v2H1z" stroke="currentColor" stroke-width="1.2"/></svg>
+    DOWNLOAD CV
+  </button>
+</a>
     </div>
   </div>
 
@@ -1019,12 +1024,10 @@
   <div class="contact-grid">
     <div class="contact-info">
       <p>Interested in collaborating or have a project in mind? I'd love to hear from you. Fill out the form and I'll respond within 48 hours.</p>
-
       <div class="contact-detail">
         <p class="contact-detail-label">LOCATION</p>
-        <p class="contact-detail-value">Milano, Italia</p>
+        <p class="contact-detail-value">Brescia, Italia</p>
       </div>
-
       <div class="contact-detail">
         <p class="contact-detail-label">AVAILABILITY</p>
         <p class="contact-detail-value" style="font-weight:500;">Open to freelance & full-time</p>
@@ -1032,19 +1035,21 @@
     </div>
 
     <div class="contact-form">
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      <script>emailjs.init("VPZMQYmBJN1JjvuCS");</script>
       <div class="form-group">
         <label class="form-label">NAME</label>
-        <input type="text" class="form-input" placeholder="Your name">
+        <input type="text" id="name" class="form-input" placeholder="Your name">
       </div>
       <div class="form-group">
         <label class="form-label">EMAIL</label>
-        <input type="email" class="form-input" placeholder="your@email.com">
+        <input type="email" id="email" class="form-input" placeholder="your@email.com">
       </div>
       <div class="form-group">
         <label class="form-label">MESSAGE</label>
-        <textarea class="form-input" placeholder="Tell me about your project..."></textarea>
+        <textarea id="message" class="form-input" placeholder="Tell me about your project..."></textarea>
       </div>
-      <button class="submit-btn">
+      <button class="submit-btn" onclick="sendEmail()">
         SEND MESSAGE
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 6-12 6V8.5l8-2.5-8-2.5V1z" stroke="currentColor" stroke-width="1.2"/></svg>
       </button>
@@ -1053,16 +1058,11 @@
 
   <footer>
     <span class="footer-logo">ALESSIA</span>
-    <nav class="footer-nav">
-      <span class="footer-nav-link" onclick="showPage('home')">HOME</span>
-      <span class="footer-nav-link" onclick="showPage('portfolio')">PORTFOLIO</span>
-      <span class="footer-nav-link" onclick="showPage('about')">ABOUT</span>
-      <span class="footer-nav-link" onclick="showPage('contact')">CONTACT</span>
-    </nav>
-    <span class="footer-copy">© 2026 — Milano, Italia</span>
+    <div class="footer-nav">
+    </div>
+    <span class="footer-copy">© 2026 — Brescia, Italia</span>
   </footer>
 </div>
-
 <script>
   function showPage(id) {
     // hide all
