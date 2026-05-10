@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alessia — Graphic Designer & 3D Modeler</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --mid: #1a1a1a;
+    --border: rgba(255,255,255,0.1);
+    --white: #ffffff;
+    --off-white: #e8e4dc;
+    --muted: rgba(255,255,255,0.45);
+    --accent: #c9a96e;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; margin-top: 0 !important; }
+
+  /* Nascondi tutto ciò che WordPress aggiunge */
+  #wpadminbar,
+  .site-header,
+  header.site-header,
+  #masthead,
+  .wp-site-blocks > header,
+  #site-header,
+  .header-main,
+  #header,
+  .site-branding,
+  .main-navigation,
+  #primary-menu,
+  .nav-primary,
+  .wp-block-template-part
+  { display: none !important; }
+  html { margin-top: 0 !important; padding-top: 0 !important; }
+  body { margin-top: 0 !important; padding-top: 0 !important; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── PAGE SYSTEM ── */
+  .page { display: none; min-height: 100vh; }
+  .page.active { display: block; animation: fadeIn 0.5s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 28px 48px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,10,1);
+    backdrop-filter: blur(12px);
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 80px;
+  }
+
+  /* Forza rimozione barra WordPress in ogni caso */
+  #wpadminbar { display: none !important; position: static !important; }
+  html { margin-top: 0 !important; padding-top: 0 !important; }
+  body { margin-top: 0 !important; padding-top: 0 !important; }
+
+  .nav-logo {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--white) !important;
+    cursor: pointer;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    min-width: 80px;
+  }
+
+  .nav-links { display: flex; gap: 40px; }
+
+  .nav-link {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.25s;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+  }
+
+  .nav-link:hover { color: var(--white); }
+  .nav-link.active { color: var(--white); border-bottom-color: var(--white); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex; align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #1a1410 0%, #0a0a0a 40%, #0d0d0d 100%);
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 65% 40%, rgba(201,169,110,0.08) 0%, transparent 60%);
+  }
+
+  /* Decorative jewelry-like pattern */
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    top: -10%; right: -5%;
+    width: 55%; height: 110%;
+    background: 
+      radial-gradient(circle at 60% 50%, rgba(30,25,18,0.9) 0%, transparent 70%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='700' viewBox='0 0 600 700'%3E%3Ccircle cx='300' cy='300' r='200' fill='none' stroke='rgba(201,169,110,0.06)' stroke-width='1'/%3E%3Ccircle cx='300' cy='300' r='150' fill='none' stroke='rgba(201,169,110,0.04)' stroke-width='1'/%3E%3Ccircle cx='300' cy='300' r='250' fill='none' stroke='rgba(201,169,110,0.03)' stroke-width='1'/%3E%3C/svg%3E") center/cover no-repeat;
+    opacity: 0.7;
+    mix-blend-mode: screen;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 48px 80px;
+    max-width: 700px;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 12vw, 160px);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+    max-width: 400px;
+    margin-bottom: 48px;
+  }
+
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 14px 28px;
+    border: 1px solid rgba(255,255,255,0.35);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s;
+    background: transparent;
+  }
+
+  .hero-cta:hover {
+    background: var(--white);
+    color: var(--black);
+  }
+
+  .hero-meta {
+    position: absolute; bottom: 40px;
+    left: 48px; right: 48px;
+    display: flex; justify-content: space-between;
+    z-index: 2;
+  }
+
+  .hero-meta span {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+    background: var(--dark);
+  }
+
+  .ticker {
+    display: flex; gap: 60px;
+    animation: ticker 18s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  .ticker span {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .ticker span.dot { color: var(--accent); }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    padding: 80px 48px 48px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  /* ── FEATURED WORKS (HOME) ── */
+  .featured-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding: 80px 48px 40px;
+  }
+
+  .view-all-link {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.25s;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .view-all-link:hover { color: var(--white); }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 0 48px;
+  }
+
+  .work-card {
+    position: relative; overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4/5;
+    background: var(--mid);
+  }
+
+  .work-card-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.1em;
+  }
+
+  /* Placeholder gradients for project images */
+  .work-card:nth-child(1) .work-card-img { background: linear-gradient(135deg, #1a1f2e 0%, #2a3040 100%); }
+  .work-card:nth-child(2) .work-card-img { background: linear-gradient(135deg, #1a0f0a 0%, #2a1510 100%); }
+  .work-card:nth-child(3) .work-card-img { background: linear-gradient(135deg, #0d1a12 0%, #1a2e1e 100%); }
+
+  .work-card:hover .work-card-img { transform: scale(1.04); }
+
+  .work-card-info {
+    padding: 20px 0 8px;
+  }
+
+  .work-card-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .work-card-cat {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Split image card (before/after) */
+  .split-card {
+    position: relative;
+    width: 100%; height: 100%;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .split-half {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .split-half.before { background: linear-gradient(135deg, #1a1008 0%, #2a1f10 100%); }
+  .split-half.after { background: linear-gradient(135deg, #251a0a 0%, #3a2a12 100%); }
+
+  .split-divider {
+    position: absolute; left: 50%; top: 0; bottom: 0;
+    width: 1px; background: rgba(255,255,255,0.3); z-index: 2;
+  }
+
+  .split-label {
+    position: absolute; top: 16px; right: 16px;
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--white); z-index: 3;
+    background: rgba(0,0,0,0.4); padding: 4px 8px;
+  }
+
+  /* ── PORTFOLIO PAGE ── */
+  .filter-bar {
+    display: flex; gap: 40px; padding: 0 48px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .filter-btn {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.25s;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    background: none; border-top: none; border-left: none; border-right: none;
+    font-family: var(--font-body);
+  }
+
+  .filter-btn:hover { color: var(--white); }
+  .filter-btn.active { color: var(--white); border-bottom-color: var(--white); }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 48px 48px 0;
+  }
+
+  .portfolio-item {
+    position: relative; overflow: hidden;
+    cursor: pointer;
+    background: var(--mid);
+  }
+
+  .portfolio-item-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.6s ease;
+    overflow: hidden;
+  }
+
+  .portfolio-item:hover .portfolio-item-img { transform: scale(1.04); }
+
+  .portfolio-item-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%);
+    opacity: 0;
+    transition: opacity 0.35s;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 24px;
+  }
+
+  .portfolio-item:hover .portfolio-item-overlay { opacity: 1; }
+
+  .overlay-cat {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px;
+  }
+
+  .overlay-title {
+    font-family: var(--font-display);
+    font-size: 22px; font-weight: 400;
+    color: var(--white); margin-bottom: 12px;
+  }
+
+  .overlay-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .tag {
+    font-size: 10px; letter-spacing: 0.1em;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 3px 10px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .portfolio-item-meta {
+    padding: 16px 0 4px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+
+  .portfolio-item-title {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 400; color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .portfolio-item-cat {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+  }
+
+  .portfolio-item-year {
+    font-size: 12px; color: var(--muted);
+  }
+
+  /* Placeholder bg colors */
+  .pi-1 { background: linear-gradient(135deg, #1a1f2e 0%, #2a3040 100%); }
+  .pi-2 { background: linear-gradient(135deg, #1a0f0a 0%, #2a1a10 100%); }
+  .pi-3 { background: linear-gradient(135deg, #1a1800 0%, #2a2810 100%); }
+  .pi-4 { background: linear-gradient(135deg, #0f1a1a 0%, #1a2e2a 100%); }
+  .pi-5 { background: linear-gradient(135deg, #1a1018 0%, #2a1a25 100%); }
+
+  /* ── ABOUT PAGE ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    padding: 0 48px 80px;
+    align-items: start;
+  }
+
+  .about-photo {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: linear-gradient(145deg, #1a1a1a 0%, #111111 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .about-photo-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #1c1c1c 0%, #141414 50%, #1a1a1a 100%);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px;
+  }
+
+  .about-photo-placeholder span {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+  }
+
+  .about-photo::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 1px solid var(--border);
+    pointer-events: none;
+  }
+
+  .about-content { padding-top: 8px; }
+
+  .about-name {
+    font-family: var(--font-display);
+    font-size: 56px; font-weight: 300;
+    color: var(--white); margin-bottom: 32px;
+    line-height: 1;
+  }
+
+  .about-bio {
+    font-size: 14px; line-height: 1.9;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 24px;
+  }
+
+  .toolkit-label {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 28px; margin-top: 48px;
+  }
+
+  .skill-row {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .skill-name {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .skill-track {
+    position: relative;
+    width: 200px; height: 1px;
+    background: var(--border);
+  }
+
+  .skill-fill {
+    position: absolute; top: 0; left: 0; height: 100%;
+    background: var(--white);
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .skill-pct {
+    font-size: 11px; letter-spacing: 0.05em; color: var(--muted);
+    min-width: 32px; text-align: right;
+  }
+
+  .skill-row-inner {
+    display: flex; align-items: center; gap: 20px;
+  }
+
+  .download-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 14px 28px;
+    border: 1px solid rgba(255,255,255,0.35);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--white); cursor: pointer;
+    transition: all 0.3s; background: transparent;
+    margin-top: 48px; font-family: var(--font-body);
+  }
+
+  .download-btn:hover { background: var(--white); color: var(--black); }
+
+  /* ── CONTACT PAGE ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 0 48px 80px;
+  }
+
+  .contact-info p {
+    font-size: 14px; line-height: 1.9;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 48px; max-width: 320px;
+  }
+
+  .contact-detail { margin-bottom: 32px; }
+
+  .contact-detail-label {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+
+  .contact-detail-value {
+    font-size: 15px; color: var(--white); font-weight: 400;
+  }
+
+  .contact-form { padding-top: 8px; }
+
+  .form-group { margin-bottom: 36px; }
+
+  .form-label {
+    display: block;
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 12px;
+  }
+
+  .form-input {
+    width: 100%;
+    background: transparent;
+    border: none; border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    font-size: 14px; color: var(--white);
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.25s;
+  }
+
+  .form-input::placeholder { color: rgba(255,255,255,0.2); }
+  .form-input:focus { border-bottom-color: rgba(255,255,255,0.5); }
+
+  textarea.form-input { resize: none; min-height: 120px; }
+
+  .submit-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 14px 28px;
+    border: 1px solid rgba(255,255,255,0.35);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--white); cursor: pointer;
+    transition: all 0.3s; background: transparent; font-family: var(--font-body);
+  }
+
+  .submit-btn:hover { background: var(--white); color: var(--black); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 80px;
+  }
+
+  .footer-logo {
+    font-size: 13px; letter-spacing: 0.12em; font-weight: 600;
+  }
+
+  .footer-nav { display: flex; gap: 32px; }
+
+  .footer-nav-link {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); cursor: pointer; transition: color 0.25s;
+  }
+
+  .footer-nav-link:hover { color: var(--white); }
+
+  .footer-copy {
+    font-size: 11px; color: var(--muted);
+  }
+
+  /* ── ICON SVG inline ── */
+  .icon { display: inline-block; vertical-align: middle; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    .nav-links { gap: 24px; }
+    .hero-content { padding: 0 24px 80px; }
+    .hero-meta { left: 24px; right: 24px; }
+    .works-grid, .portfolio-grid { grid-template-columns: 1fr 1fr; padding: 0 24px; }
+    .section-header, .featured-header { padding: 60px 24px 32px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; padding: 0 24px 60px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; padding: 0 24px 60px; }
+    .filter-bar { padding: 0 24px 32px; gap: 24px; flex-wrap: wrap; }
+    footer { padding: 24px; flex-direction: column; gap: 20px; text-align: center; }
+    .footer-nav { justify-content: center; }
+  }
+
+  @media (max-width: 600px) {
+    .works-grid, .portfolio-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 72px; }
+    .nav-links { gap: 16px; }
+    .nav-link { font-size: 10px; letter-spacing: 0.1em; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;padding:28px 48px!important;background:rgba(10,10,10,1)!important;z-index:9999!important;box-sizing:border-box!important;">
+  <div class="nav-logo" style="display:block!important;visibility:visible!important;opacity:1!important;color:#ffffff!important;font-weight:600!important;font-size:13px!important;letter-spacing:0.12em!important;cursor:pointer!important;min-width:80px!important;" onclick="showPage('home')">ALESSIA</div>
+  <div class="nav-links" style="display:flex!important;gap:40px!important;">
+    <span class="nav-link active" id="nav-home" onclick="showPage('home')">HOME</span>
+    <span class="nav-link" id="nav-portfolio" onclick="showPage('portfolio')">PORTFOLIO</span>
+    <span class="nav-link" id="nav-about" onclick="showPage('about')">ABOUT</span>
+    <span class="nav-link" id="nav-contact" onclick="showPage('contact')">CONTACT</span>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════ HOME ═══ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">ALESSIA</h1>
+      <p class="hero-subtitle">
+        Graphic Designer & 3D Modeler based in Brescia.<br>
+        My style is based primarily on contrast, but not only that: I'm also bold,and above all, incisive.<br>
+        
+      </p>
+      <button class="hero-cta" onclick="showPage('portfolio')">
+        VIEW PORTFOLIO
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+    </div>
+    <div class="hero-meta">
+      <span>BRESCIA, ITALIA</span>
+      <span>SCROLL TO EXPLORE</span>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>3D MODELING</span><span class="dot">·</span>
+      <span>EDITORIAL</span><span class="dot">·</span>
+      <span>PHOTO RETOUCHING</span><span class="dot">·</span>
+      <span>3D FASHION MODELING </span><span class="dot">·</span>
+      <span>ILLUSTRATION</span><span class="dot">·</span>
+      <span>BRANDING</span><span class="dot">·</span>
+      <!-- duplicate for seamless loop -->
+      <span>3D MODELING</span><span class="dot">·</span>
+      <span>EDITORIAL</span><span class="dot">·</span>
+      <span>PHOTO RETOUCHING</span><span class="dot">·</span>
+      <span>3D FASHION MODELING</span><span class="dot">·</span>
+      <span>ILLUSTRATION</span><span class="dot">·</span>
+      <span>BRANDING</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <div class="featured-header">
+    <div>
+      <p class="section-label">SELECTED WORKS</p>
+      <h2 class="section-title" style="font-size: clamp(40px,5vw,64px);">Featured</h2>
+    </div>
+    <span class="view-all-link" onclick="showPage('portfolio')">
+      VIEW ALL
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.2"/></svg>
+    </span>
+  </div>
+
+  <div class="works-grid">
+    <!-- Card 1 -->
+    <div>
+      <div class="work-card">
+        <div class="work-card-img pi-1" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+          <img src="SPIREA SILVER 1920X1080.png" alt="Piercing Collection" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="work-card-info">
+        <h3 class="work-card-title">Piercing Collection </h3>
+        <p class="work-card-cat">3D MODELING</p>
+      </div>
+    </div>
+   <!-- Card 2 — split before/after -->
+<div>
+  <div class="work-card">
+    <div class="split-card">
+      <div class="split-half before" style="background:none; padding:0; overflow:hidden;">
+        <img src="DSC_0124.JPG" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div class="split-divider"></div>
+      <div class="split-half after" style="background:none; padding:0; overflow:hidden;">
+        <img src="DSC_0124_post.jpg" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <span class="split-label">AFTER</span>
+    </div>
+  </div>
+  <div class="work-card-info">
+    <h3 class="work-card-title">Editorial Project</h3>
+    <p class="work-card-cat">PHOTO RETOUCHING</p>
+  </div>
+</div>
+    <!-- Card 3 -->
+    <div>
+      <div class="work-card">
+        <div class="work-card-img pi-3" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background-color:rgb(255, 255, 255); overflow:hidden;">
+         <img src="BOX.jpg" alt="Amarena logo" style="width:100%; height:100%; object-fit:cover; border:none; outline:none;">
+        </div>
+      </div>
+      <div class="work-card-info">
+        <h3 class="work-card-title">Amarena logo </h3>
+        <p class="work-card-cat">BRANDING</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">ALESSIA</span>
+    <nav class="footer-nav">
+      <span class="footer-nav-link" onclick="showPage('home')">HOME</span>
+      <span class="footer-nav-link" onclick="showPage('portfolio')">PORTFOLIO</span>
+      <span class="footer-nav-link" onclick="showPage('about')">ABOUT</span>
+      <span class="footer-nav-link" onclick="showPage('contact')">CONTACT</span>
+    </nav>
+    <span class="footer-copy">© 2026 — Brescia, Italia</span>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════ PORTFOLIO ═══ -->
+<div id="page-portfolio" class="page">
+
+  <div class="section-header" style="padding-top:120px;">
+    <p class="section-label">THE COLLECTION</p>
+    <h1 class="section-title">Portfolio</h1>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterPortfolio('all', this)">ALL</button>
+    <button class="filter-btn" onclick="filterPortfolio('photo-retouching', this)">PHOTO RETOUCHING</button>
+    <button class="filter-btn" onclick="filterPortfolio('3d-modeling', this)">3D MODELING</button>
+    <button class="filter-btn" onclick="filterPortfolio('3d-modeling', this)">3D FASHION MODELING</button>
+    <button class="filter-btn" onclick="filterPortfolio('illustration', this)">ILLUSTRATION</button>
+    <button class="filter-btn" onclick="filterPortfolio('catalog', this)">EDITORIAL</button>
+    <button class="filter-btn" onclick="filterPortfolio('branding', this)">BRANDING</button>
+  </div>
+
+  <div class="portfolio-grid" id="portfolio-grid">
+
+    <!-- Item 1 -->
+    <div class="portfolio-item" data-cat="3d-modeling">
+      <div class="portfolio-item-img pi-1">
+        <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ 3D RENDER ]</span>
+        <div class="portfolio-item-overlay">
+          <p class="overlay-cat">3D MODELING</p>
+          <h3 class="overlay-title">Bijoux Collection SS25</h3>
+          <div class="overlay-tags"><span class="tag">Rhinoceros 8</span><span class="tag">KeyShot</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item-meta">
+        <div>
+          <p class="portfolio-item-title">Bijoux Collection SS25</p>
+          <p class="portfolio-item-cat">3D MODELING</p>
+        </div>
+        <span class="portfolio-item-year">2025</span>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="portfolio-item" data-cat="photo-retouching">
+      <div class="portfolio-item-img" style="position:relative;">
+        <div class="split-card" style="width:100%;height:100%;">
+          <div class="split-half before">BEFORE</div>
+          <div class="split-divider"></div>
+          <div class="split-half after">AFTER</div>
+        </div>
+        <div class="portfolio-item-overlay">
+          <p class="overlay-cat">PHOTO RETOUCHING</p>
+          <h3 class="overlay-title">Beauty Editorial Retouching</h3>
+          <div class="overlay-tags"><span class="tag">Photoshop</span><span class="tag">Lightroom</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item-meta">
+        <div>
+          <p class="portfolio-item-title">Beauty Editorial Retouching</p>
+          <p class="portfolio-item-cat">PHOTO RETOUCHING</p>
+        </div>
+        <span class="portfolio-item-year">2025</span>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="portfolio-item" data-cat="illustration">
+      <div class="portfolio-item-img pi-3">
+        <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ ILLUSTRATION ]</span>
+        <div class="portfolio-item-overlay">
+          <p class="overlay-cat">ILLUSTRATION</p>
+          <h3 class="overlay-title">Botanical Bijoux Illustration</h3>
+          <div class="overlay-tags"><span class="tag">Illustrator</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item-meta">
+        <div>
+          <p class="portfolio-item-title">Botanical Bijoux Illustration</p>
+          <p class="portfolio-item-cat">ILLUSTRATION</p>
+        </div>
+        <span class="portfolio-item-year">2025</span>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="portfolio-item" data-cat="catalog">
+      <div class="portfolio-item-img pi-4">
+        <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ CATALOG ]</span>
+        <div class="portfolio-item-overlay">
+          <p class="overlay-cat">CATALOG / EDITORIAL</p>
+          <h3 class="overlay-title">Luxury Accessories Catalog</h3>
+          <div class="overlay-tags"><span class="tag">InDesign</span><span class="tag">Photoshop</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item-meta">
+        <div>
+          <p class="portfolio-item-title">Luxury Accessories Catalog</p>
+          <p class="portfolio-item-cat">CATALOG / EDITORIAL</p>
+        </div>
+        <span class="portfolio-item-year">2024</span>
+      </div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="portfolio-item" data-cat="branding">
+      <div class="portfolio-item-img pi-5">
+        <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ BRANDING ]</span>
+        <div class="portfolio-item-overlay">
+          <p class="overlay-cat">BRANDING</p>
+          <h3 class="overlay-title">Maison Lumière Visual Identity</h3>
+          <div class="overlay-tags"><span class="tag">Illustrator</span><span class="tag">InDesign</span><span class="tag">Photoshop</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item-meta">
+        <div>
+          <p class="portfolio-item-title">Maison Lumière Visual Identity</p>
+          <p class="portfolio-item-cat">BRANDING</p>
+        </div>
+        <span class="portfolio-item-year">2024</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-logo">ALESSIA</span>
+    <nav class="footer-nav">
+      <span class="footer-nav-link" onclick="showPage('home')">HOME</span>
+      <span class="footer-nav-link" onclick="showPage('portfolio')">PORTFOLIO</span>
+      <span class="footer-nav-link" onclick="showPage('about')">ABOUT</span>
+      <span class="footer-nav-link" onclick="showPage('contact')">CONTACT</span>
+    </nav>
+    <span class="footer-copy">© 2026 — Milano, Italia</span>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════ ABOUT ═══ -->
+<div id="page-about" class="page">
+
+  <div class="section-header" style="padding-top:120px;">
+    <p class="section-label">THE BLUEPRINT</p>
+    <h1 class="section-title">About</h1>
+  </div>
+
+  <div class="about-grid">
+    <!-- Photo -->
+    <div class="about-photo">
+      <div class="about-photo-placeholder">
+        <img src="Foto_cv.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="about-content">
+      <h2 class="about-name">Alessia</h2>
+      <p class="about-bio">
+      I'm a graphic designer and 3D modeler based in Brescia—but my mind is always somewhere between a 3D model and a layout. <br>
+      I studied graphic design at the Santa Giulia Academy of Fine Arts, and from there I decided to venture into another field: I'm currently specializing in 3D Fashion Design at the ITS Academy Macchina Lonati, while I'm interning at Barbieri Creazioni S.p.A., an Italian jewelry and fashion accessories company.
+</p>
+<p class="about-bio">
+  My favorite place? That strange corner where editorial design meets the technical precision of 3D. Photo editing for catalogs, jewelry models built curve by curve in Rhinoceros 8, digital clothing sewn in CLO3D—every project is a different puzzle, and I can't leave a single piece out of place. <br>
+  I'm obsessed with detail—in the best sense of the word. Because every shadow in an image, every node in a mesh, every typographic choice is never random: it tells a story. And I want you to feel it.
+</p>
+
+      <p class="toolkit-label">THE TOOLKIT</p>
+
+      <div id="skills-container">
+        <div class="skill-row">
+          <span class="skill-name">ADOBE PHOTOSHOP</span>
+          <div class="skill-row-inner">
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="95%"></div></div>
+            <span class="skill-pct">95%</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">ADOBE ILLUSTRATOR</span>
+          <div class="skill-row-inner">
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="95%"></div></div>
+            <span class="skill-pct">95%</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">ADOBE INDESIGN</span>
+          <div class="skill-row-inner">
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="95%"></div></div>
+            <span class="skill-pct">95%</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">RHINOCEROS 8</span>
+          <div class="skill-row-inner">
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="90%"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">CLO3D</span>
+          <div class="skill-row-inner">
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="90%"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">PHOTOGRAPHY</span>
+          <div class="skill-row-inner">
+            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="85%"></div></div>
+            <span class="skill-pct">85%</span>
+          </div>
+        </div>
+      </div>
+<a href="Bosio_Alessia_Cv.pdf" download>
+  <button class="download-btn">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M7 9l-3-3M7 9l3-3M1 11h12v2H1z" stroke="currentColor" stroke-width="1.2"/></svg>
+    DOWNLOAD CV
+  </button>
+</a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">ALESSIA</span>
+    <nav class="footer-nav">
+      <span class="footer-nav-link" onclick="showPage('home')">HOME</span>
+      <span class="footer-nav-link" onclick="showPage('portfolio')">PORTFOLIO</span>
+      <span class="footer-nav-link" onclick="showPage('about')">ABOUT</span>
+      <span class="footer-nav-link" onclick="showPage('contact')">CONTACT</span>
+    </nav>
+    <span class="footer-copy">© 2026 — Milano, Italia</span>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════ CONTACT ═══ -->
+<div id="page-contact" class="page">
+
+  <div class="section-header" style="padding-top:120px;">
+    <p class="section-label">THE INQUIRY</p>
+    <h1 class="section-title">Contact</h1>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>Interested in collaborating or have a project in mind? I'd love to hear from you. Fill out the form and I'll respond within 48 hours.</p>
+      <div class="contact-detail">
+        <p class="contact-detail-label">LOCATION</p>
+        <p class="contact-detail-value">Brescia, Italia</p>
+      </div>
+      <div class="contact-detail">
+        <p class="contact-detail-label">AVAILABILITY</p>
+        <p class="contact-detail-value" style="font-weight:500;">Open to freelance & full-time</p>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      <script>emailjs.init("VPZMQYmBJN1JjvuCS");</script>
+      <div class="form-group">
+        <label class="form-label">NAME</label>
+        <input type="text" id="name" class="form-input" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">EMAIL</label>
+        <input type="email" id="email" class="form-input" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">MESSAGE</label>
+        <textarea id="message" class="form-input" placeholder="Tell me about your project..."></textarea>
+      </div>
+      <button class="submit-btn" onclick="sendEmail()">
+        SEND MESSAGE
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 6-12 6V8.5l8-2.5-8-2.5V1z" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">ALESSIA</span>
+    <div class="footer-nav">
+    </div>
+    <span class="footer-copy">© 2026 — Brescia, Italia</span>
+  </footer>
+</div>
+<script>
+  function showPage(id) {
+    // hide all
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+
+    // show target
+    document.getElementById('page-' + id).classList.add('active');
+    document.getElementById('nav-' + id).classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // animate skill bars when about page opens
+    if (id === 'about') {
+      setTimeout(() => {
+        document.querySelectorAll('.skill-fill').forEach(bar => {
+          bar.style.width = bar.getAttribute('data-width');
+        });
+      }, 200);
+    }
+  }
+
+  // Portfolio filter
+  function filterPortfolio(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>
