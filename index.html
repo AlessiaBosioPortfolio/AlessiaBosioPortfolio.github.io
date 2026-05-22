@@ -3,1101 +3,685 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alessia — Graphic Designer & 3D Modeler</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Alessia Bosio — Graphic Designer & 3D Modeler</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Geist+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --black: #0a0a0a;
-    --dark: #111111;
-    --mid: #1a1a1a;
-    --border: rgba(255,255,255,0.1);
-    --white: #ffffff;
-    --off-white: #e8e4dc;
-    --muted: rgba(255,255,255,0.45);
-    --accent: #c9a96e;
-    --font-display: 'Cormorant Garamond', serif;
-    --font-body: 'Montserrat', sans-serif;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; margin-top: 0 !important; }
-
-  /* Nascondi tutto ciò che WordPress aggiunge */
-  #wpadminbar,
-  .site-header,
-  header.site-header,
-  #masthead,
-  .wp-site-blocks > header,
-  #site-header,
-  .header-main,
-  #header,
-  .site-branding,
-  .main-navigation,
-  #primary-menu,
-  .nav-primary,
-  .wp-block-template-part
-  { display: none !important; }
-  html { margin-top: 0 !important; padding-top: 0 !important; }
-  body { margin-top: 0 !important; padding-top: 0 !important; }
-
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--font-body);
-    font-size: 14px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* ── PAGE SYSTEM ── */
-  .page { display: none; min-height: 100vh; }
-  .page.active { display: block; animation: fadeIn 0.5s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 28px 48px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(10,10,10,1);
-    backdrop-filter: blur(12px);
-    box-sizing: border-box;
-    width: 100%;
-    min-height: 80px;
-  }
-
-  /* Forza rimozione barra WordPress in ogni caso */
-  #wpadminbar { display: none !important; position: static !important; }
-  html { margin-top: 0 !important; padding-top: 0 !important; }
-  body { margin-top: 0 !important; padding-top: 0 !important; }
-
-  .nav-logo {
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    color: var(--white) !important;
-    cursor: pointer;
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: block !important;
-    min-width: 80px;
-  }
-
-  .nav-links { display: flex; gap: 40px; }
-
-  .nav-link {
-    font-family: var(--font-body);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    cursor: pointer;
-    transition: color 0.25s;
-    padding-bottom: 2px;
-    border-bottom: 1px solid transparent;
-  }
-
-  .nav-link:hover { color: var(--white); }
-  .nav-link.active { color: var(--white); border-bottom-color: var(--white); }
-
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    height: 100vh;
-    display: flex; align-items: flex-end;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, #1a1410 0%, #0a0a0a 40%, #0d0d0d 100%);
-  }
-
-  .hero-bg::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 65% 40%, rgba(201,169,110,0.08) 0%, transparent 60%);
-  }
-
-  /* Decorative jewelry-like pattern */
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    top: -10%; right: -5%;
-    width: 55%; height: 110%;
-    background: 
-      radial-gradient(circle at 60% 50%, rgba(30,25,18,0.9) 0%, transparent 70%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='700' viewBox='0 0 600 700'%3E%3Ccircle cx='300' cy='300' r='200' fill='none' stroke='rgba(201,169,110,0.06)' stroke-width='1'/%3E%3Ccircle cx='300' cy='300' r='150' fill='none' stroke='rgba(201,169,110,0.04)' stroke-width='1'/%3E%3Ccircle cx='300' cy='300' r='250' fill='none' stroke='rgba(201,169,110,0.03)' stroke-width='1'/%3E%3C/svg%3E") center/cover no-repeat;
-    opacity: 0.7;
-    mix-blend-mode: screen;
-  }
-
-  .hero-content {
-    position: relative; z-index: 2;
-    padding: 0 48px 80px;
-    max-width: 700px;
-  }
-
-  .hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(80px, 12vw, 160px);
-    font-weight: 300;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    color: var(--white);
-    margin-bottom: 32px;
-  }
-
-  .hero-subtitle {
-    font-size: 13px;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.8;
-    max-width: 400px;
-    margin-bottom: 48px;
-  }
-
-  .hero-cta {
-    display: inline-flex; align-items: center; gap: 12px;
-    padding: 14px 28px;
-    border: 1px solid rgba(255,255,255,0.35);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--white);
-    cursor: pointer;
-    transition: all 0.3s;
-    background: transparent;
-  }
-
-  .hero-cta:hover {
-    background: var(--white);
-    color: var(--black);
-  }
-
-  .hero-meta {
-    position: absolute; bottom: 40px;
-    left: 48px; right: 48px;
-    display: flex; justify-content: space-between;
-    z-index: 2;
-  }
-
-  .hero-meta span {
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* ── TICKER ── */
-  .ticker-wrap {
-    overflow: hidden;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 0;
-    background: var(--dark);
-  }
-
-  .ticker {
-    display: flex; gap: 60px;
-    animation: ticker 18s linear infinite;
-    white-space: nowrap;
-    width: max-content;
-  }
-
-  .ticker span {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  .ticker span.dot { color: var(--accent); }
-
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* ── SECTION HEADER ── */
-  .section-header {
-    padding: 80px 48px 48px;
-  }
-
-  .section-label {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(48px, 6vw, 80px);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1;
-  }
-
-  /* ── FEATURED WORKS (HOME) ── */
-  .featured-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    padding: 80px 48px 40px;
-  }
-
-  .view-all-link {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    cursor: pointer;
-    transition: color 0.25s;
-    display: flex; align-items: center; gap: 8px;
-  }
-
-  .view-all-link:hover { color: var(--white); }
-
-  .works-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    padding: 0 48px;
-  }
-
-  .work-card {
-    position: relative; overflow: hidden;
-    cursor: pointer;
-    aspect-ratio: 4/5;
-    background: var(--mid);
-  }
-
-  .work-card-img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; color: var(--muted); letter-spacing: 0.1em;
-  }
-
-  /* Placeholder gradients for project images */
-  .work-card:nth-child(1) .work-card-img { background: linear-gradient(135deg, #1a1f2e 0%, #2a3040 100%); }
-  .work-card:nth-child(2) .work-card-img { background: linear-gradient(135deg, #1a0f0a 0%, #2a1510 100%); }
-  .work-card:nth-child(3) .work-card-img { background: linear-gradient(135deg, #0d1a12 0%, #1a2e1e 100%); }
-
-  .work-card:hover .work-card-img { transform: scale(1.04); }
-
-  .work-card-info {
-    padding: 20px 0 8px;
-  }
-
-  .work-card-title {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-
-  .work-card-cat {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* Split image card (before/after) */
-  .split-card {
-    position: relative;
-    width: 100%; height: 100%;
-    display: flex;
-    overflow: hidden;
-  }
-
-  .split-half {
-    flex: 1;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-  }
-
-  .split-half.before { background: linear-gradient(135deg, #1a1008 0%, #2a1f10 100%); }
-  .split-half.after { background: linear-gradient(135deg, #251a0a 0%, #3a2a12 100%); }
-
-  .split-divider {
-    position: absolute; left: 50%; top: 0; bottom: 0;
-    width: 1px; background: rgba(255,255,255,0.3); z-index: 2;
-  }
-
-  .split-label {
-    position: absolute; top: 16px; right: 16px;
-    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--white); z-index: 3;
-    background: rgba(0,0,0,0.4); padding: 4px 8px;
-  }
-
-  /* ── PORTFOLIO PAGE ── */
-  .filter-bar {
-    display: flex; gap: 40px; padding: 0 48px 48px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .filter-btn {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    cursor: pointer;
-    transition: color 0.25s;
-    padding-bottom: 4px;
-    border-bottom: 1px solid transparent;
-    background: none; border-top: none; border-left: none; border-right: none;
-    font-family: var(--font-body);
-  }
-
-  .filter-btn:hover { color: var(--white); }
-  .filter-btn.active { color: var(--white); border-bottom-color: var(--white); }
-
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    padding: 48px 48px 0;
-  }
-
-  .portfolio-item {
-    position: relative; overflow: hidden;
-    cursor: pointer;
-    background: var(--mid);
-  }
-
-  .portfolio-item-img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    display: flex; align-items: center; justify-content: center;
-    transition: transform 0.6s ease;
-    overflow: hidden;
-  }
-
-  .portfolio-item:hover .portfolio-item-img { transform: scale(1.04); }
-
-  .portfolio-item-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%);
-    opacity: 0;
-    transition: opacity 0.35s;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 24px;
-  }
-
-  .portfolio-item:hover .portfolio-item-overlay { opacity: 1; }
-
-  .overlay-cat {
-    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 8px;
-  }
-
-  .overlay-title {
-    font-family: var(--font-display);
-    font-size: 22px; font-weight: 400;
-    color: var(--white); margin-bottom: 12px;
-  }
-
-  .overlay-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-
-  .tag {
-    font-size: 10px; letter-spacing: 0.1em;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 3px 10px;
-    color: rgba(255,255,255,0.7);
-  }
-
-  .portfolio-item-meta {
-    padding: 16px 0 4px;
-    display: flex; justify-content: space-between; align-items: flex-start;
-  }
-
-  .portfolio-item-title {
-    font-family: var(--font-display);
-    font-size: 18px; font-weight: 400; color: var(--white);
-    margin-bottom: 2px;
-  }
-
-  .portfolio-item-cat {
-    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
-  }
-
-  .portfolio-item-year {
-    font-size: 12px; color: var(--muted);
-  }
-
-  /* Placeholder bg colors */
-  .pi-1 { background: linear-gradient(135deg, #1a1f2e 0%, #2a3040 100%); }
-  .pi-2 { background: linear-gradient(135deg, #1a0f0a 0%, #2a1a10 100%); }
-  .pi-3 { background: linear-gradient(135deg, #1a1800 0%, #2a2810 100%); }
-  .pi-4 { background: linear-gradient(135deg, #0f1a1a 0%, #1a2e2a 100%); }
-  .pi-5 { background: linear-gradient(135deg, #1a1018 0%, #2a1a25 100%); }
-
-  /* ── ABOUT PAGE ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    padding: 0 48px 80px;
-    align-items: start;
-  }
-
-  .about-photo {
-    position: relative;
-    aspect-ratio: 3/4;
-    overflow: hidden;
-    background: linear-gradient(145deg, #1a1a1a 0%, #111111 100%);
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  .about-photo-placeholder {
-    width: 100%; height: 100%;
-    background: linear-gradient(160deg, #1c1c1c 0%, #141414 50%, #1a1a1a 100%);
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 12px;
-  }
-
-  .about-photo-placeholder span {
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
-  }
-
-  .about-photo::after {
-    content: '';
-    position: absolute; inset: 0;
-    border: 1px solid var(--border);
-    pointer-events: none;
-  }
-
-  .about-content { padding-top: 8px; }
-
-  .about-name {
-    font-family: var(--font-display);
-    font-size: 56px; font-weight: 300;
-    color: var(--white); margin-bottom: 32px;
-    line-height: 1;
-  }
-
-  .about-bio {
-    font-size: 14px; line-height: 1.9;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 24px;
-  }
-
-  .toolkit-label {
-    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 28px; margin-top: 48px;
-  }
-
-  .skill-row {
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .skill-name {
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--white);
-  }
-
-  .skill-track {
-    position: relative;
-    width: 200px; height: 1px;
-    background: var(--border);
-  }
-
-  .skill-fill {
-    position: absolute; top: 0; left: 0; height: 100%;
-    background: var(--white);
-    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .skill-pct {
-    font-size: 11px; letter-spacing: 0.05em; color: var(--muted);
-    min-width: 32px; text-align: right;
-  }
-
-  .skill-row-inner {
-    display: flex; align-items: center; gap: 20px;
-  }
-
-  .download-btn {
-    display: inline-flex; align-items: center; gap: 12px;
-    padding: 14px 28px;
-    border: 1px solid rgba(255,255,255,0.35);
-    font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--white); cursor: pointer;
-    transition: all 0.3s; background: transparent;
-    margin-top: 48px; font-family: var(--font-body);
-  }
-
-  .download-btn:hover { background: var(--white); color: var(--black); }
-
-  /* ── CONTACT PAGE ── */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    padding: 0 48px 80px;
-  }
-
-  .contact-info p {
-    font-size: 14px; line-height: 1.9;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 48px; max-width: 320px;
-  }
-
-  .contact-detail { margin-bottom: 32px; }
-
-  .contact-detail-label {
-    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 6px;
-  }
-
-  .contact-detail-value {
-    font-size: 15px; color: var(--white); font-weight: 400;
-  }
-
-  .contact-form { padding-top: 8px; }
-
-  .form-group { margin-bottom: 36px; }
-
-  .form-label {
-    display: block;
-    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 12px;
-  }
-
-  .form-input {
-    width: 100%;
-    background: transparent;
-    border: none; border-bottom: 1px solid var(--border);
-    padding: 10px 0;
-    font-size: 14px; color: var(--white);
-    font-family: var(--font-body);
-    outline: none;
-    transition: border-color 0.25s;
-  }
-
-  .form-input::placeholder { color: rgba(255,255,255,0.2); }
-  .form-input:focus { border-bottom-color: rgba(255,255,255,0.5); }
-
-  textarea.form-input { resize: none; min-height: 120px; }
-
-  .submit-btn {
-    display: inline-flex; align-items: center; gap: 12px;
-    padding: 14px 28px;
-    border: 1px solid rgba(255,255,255,0.35);
-    font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--white); cursor: pointer;
-    transition: all 0.3s; background: transparent; font-family: var(--font-body);
-  }
-
-  .submit-btn:hover { background: var(--white); color: var(--black); }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 48px;
-    display: flex; justify-content: space-between; align-items: center;
-    margin-top: 80px;
-  }
-
-  .footer-logo {
-    font-size: 13px; letter-spacing: 0.12em; font-weight: 600;
-  }
-
-  .footer-nav { display: flex; gap: 32px; }
-
-  .footer-nav-link {
-    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--muted); cursor: pointer; transition: color 0.25s;
-  }
-
-  .footer-nav-link:hover { color: var(--white); }
-
-  .footer-copy {
-    font-size: 11px; color: var(--muted);
-  }
-
-  /* ── ICON SVG inline ── */
-  .icon { display: inline-block; vertical-align: middle; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 20px 24px; }
-    .nav-links { gap: 24px; }
-    .hero-content { padding: 0 24px 80px; }
-    .hero-meta { left: 24px; right: 24px; }
-    .works-grid, .portfolio-grid { grid-template-columns: 1fr 1fr; padding: 0 24px; }
-    .section-header, .featured-header { padding: 60px 24px 32px; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; padding: 0 24px 60px; }
-    .contact-grid { grid-template-columns: 1fr; gap: 40px; padding: 0 24px 60px; }
-    .filter-bar { padding: 0 24px 32px; gap: 24px; flex-wrap: wrap; }
-    footer { padding: 24px; flex-direction: column; gap: 20px; text-align: center; }
-    .footer-nav { justify-content: center; }
-  }
-
-  @media (max-width: 600px) {
-    .works-grid, .portfolio-grid { grid-template-columns: 1fr; }
-    .hero-title { font-size: 72px; }
-    .nav-links { gap: 16px; }
-    .nav-link { font-size: 10px; letter-spacing: 0.1em; }
-  }
+:root {
+  --bg: #080808;
+  --bg2: #0f0f0f;
+  --bg3: #161616;
+  --border: rgba(255,255,255,0.08);
+  --white: #f5f2ed;
+  --muted: rgba(245,242,237,0.4);
+  --muted2: rgba(245,242,237,0.2);
+  --accent: #7d9e7e;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Geist Mono', monospace;
+  --font-sans: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--white); font-family: var(--font-sans); font-size: 14px; line-height: 1.6; overflow-x: hidden; cursor: none; }
+
+.cursor { width: 8px; height: 8px; background: var(--white); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width 0.3s, height 0.3s; }
+.cursor-ring { width: 32px; height: 32px; border: 1px solid rgba(245,242,237,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); }
+
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; animation: pgIn 0.5s ease; }
+@keyframes pgIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* NAV */
+#main-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 24px 48px; background: rgba(8,8,8,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: var(--font-serif); font-size: 18px; font-weight: 400; font-style: italic; color: var(--white); cursor: pointer; }
+.nav-links { display: flex; gap: 40px; }
+.nav-link { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); cursor: pointer; transition: color 0.3s; position: relative; }
+.nav-link:hover, .nav-link.active { color: var(--white); }
+.nav-link.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--accent); }
+
+/* HOME */
+.hero { height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 48px 80px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(125,158,126,0.04) 0%, transparent 60%); }
+.hero-counter { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.3em; color: var(--muted); margin-bottom: 24px; }
+.hero-title { font-family: var(--font-serif); font-size: clamp(64px, 10vw, 148px); font-weight: 400; line-height: 0.9; letter-spacing: 0.08em; margin-bottom: 40px; }
+.hero-title em { font-style: italic; color: var(--accent); }
+.hero-sub { display: flex; align-items: flex-end; justify-content: space-between; }
+.hero-desc { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 360px; }
+.hero-cta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); cursor: pointer; display: inline-flex; align-items: center; gap: 16px; border: 1px solid var(--border); background: none; padding: 14px 24px; transition: all 0.3s; }
+.hero-cta:hover { border-color: var(--white); background: var(--white); color: var(--bg); }
+.hero-scroll { position: absolute; right: 48px; top: 50%; transform: translateY(-50%) rotate(90deg); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.3em; color: var(--muted2); text-transform: uppercase; }
+
+/* TICKER */
+.ticker-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 12px 0; background: var(--bg2); }
+.ticker { display: flex; gap: 48px; animation: tick 22s linear infinite; width: max-content; }
+.ticker span { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.ticker .dot { color: var(--accent); }
+@keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* SECTION HEADER */
+.section-intro { padding: 80px 48px 48px; display: flex; justify-content: space-between; align-items: flex-end; }
+.section-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.3em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+.section-title { font-family: var(--font-serif); font-size: clamp(36px, 5vw, 64px); font-weight: 400; line-height: 1; }
+.view-all { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--muted); cursor: pointer; text-transform: uppercase; transition: color 0.3s; display: flex; align-items: center; gap: 10px; }
+.view-all:hover { color: var(--white); }
+
+/* CARDS */
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; padding: 0 48px; }
+.proj-card { position: relative; overflow: hidden; cursor: pointer; background: var(--bg3); }
+.proj-card-img { width: 100%; aspect-ratio: 3/4; overflow: hidden; position: relative; }
+.proj-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.proj-card:hover .proj-card-img img { transform: scale(1.06); }
+.proj-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, transparent 50%); opacity: 0; transition: opacity 0.4s; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
+.proj-card:hover .proj-card-overlay { opacity: 1; }
+.proj-card-cat-ov { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 6px; }
+.proj-card-title-ov { font-family: var(--font-serif); font-size: 20px; font-weight: 400; color: var(--white); }
+.proj-card-info { padding: 16px 0 4px; }
+.proj-card-title { font-family: var(--font-serif); font-size: 17px; font-weight: 400; color: var(--white); margin-bottom: 2px; }
+.proj-card-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: var(--muted); }
+
+/* PORTFOLIO PAGE */
+.page-header { padding: 140px 48px 60px; border-bottom: 1px solid var(--border); }
+.filter-row { display: flex; gap: 32px; padding: 28px 48px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.filter-btn { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); background: none; border: none; border-bottom: 1px solid transparent; cursor: pointer; transition: color 0.3s; padding-bottom: 2px; }
+.filter-btn:hover { color: var(--white); }
+.filter-btn.active { color: var(--white); border-bottom-color: var(--accent); }
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; padding: 28px 48px 0; }
+.port-item { position: relative; overflow: hidden; cursor: pointer; background: var(--bg3); }
+.port-item-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; position: relative; }
+.port-item-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.port-item:hover .port-item-img img { transform: scale(1.06); }
+.port-item-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.92) 0%, transparent 55%); opacity: 0; transition: opacity 0.4s; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; }
+.port-item:hover .port-item-overlay { opacity: 1; }
+.port-item-cat { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 4px; }
+.port-item-title-ov { font-family: var(--font-serif); font-size: 18px; color: var(--white); }
+.port-item-meta { padding: 14px 0 4px; display: flex; justify-content: space-between; align-items: flex-start; }
+.port-item-name { font-family: var(--font-serif); font-size: 16px; color: var(--white); margin-bottom: 2px; }
+.port-item-cat-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+.port-item-year { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+
+/* PROJECT PAGE */
+.proj-page { background: var(--bg); }
+.proj-hero { width: 100%; height: 100vh; overflow: hidden; position: relative; }
+.proj-hero img, .proj-hero video { width: 100%; height: 100%; object-fit: cover; }
+.proj-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.75) 0%, transparent 55%); display: flex; flex-direction: column; justify-content: flex-end; padding: 60px 80px; }
+.proj-hero-cat { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.3em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+.proj-hero-title { font-family: var(--font-serif); font-size: clamp(44px, 7vw, 90px); font-weight: 400; line-height: 0.95; margin-bottom: 32px; }
+.proj-hero-meta { display: flex; gap: 48px; flex-wrap: wrap; }
+.proj-meta-item label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; display: block; margin-bottom: 4px; }
+.proj-meta-item span { font-size: 13px; color: var(--white); }
+.proj-back { position: fixed; top: 50%; left: 28px; transform: translateY(-50%); z-index: 500; writing-mode: vertical-rl; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); cursor: pointer; transition: color 0.3s; display: flex; align-items: center; gap: 12px; }
+.proj-back:hover { color: var(--white); }
+.proj-back-line { width: 1px; height: 40px; background: var(--muted); transition: background 0.3s; }
+.proj-back:hover .proj-back-line { background: var(--white); }
+.proj-body { padding: 80px 120px; max-width: 1200px; margin: 0 auto; }
+.proj-desc { font-family: var(--font-serif); font-size: clamp(17px, 1.8vw, 22px); font-weight: 400; line-height: 1.7; color: rgba(245,242,237,0.8); margin-bottom: 64px; border-left: 2px solid var(--accent); padding-left: 32px; }
+.proj-images { display: flex; flex-direction: column; gap: 4px; }
+.proj-img-full { width: 100%; overflow: hidden; }
+.proj-img-full img, .proj-img-full video { width: 100%; display: block; }
+.proj-img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.proj-img-pair img, .proj-img-pair video { width: 100%; display: block; object-fit: cover; }
+.proj-img-caption { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; text-align: center; padding: 12px 0 24px; }
+.proj-tools { padding: 60px 120px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); display: flex; gap: 80px; align-items: flex-start; }
+.proj-tools-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.3em; color: var(--accent); text-transform: uppercase; min-width: 120px; padding-top: 4px; }
+.proj-tools-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.proj-tool-tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; border: 1px solid var(--border); padding: 6px 16px; color: var(--muted); }
+
+/* ABOUT */
+.about-layout { display: grid; grid-template-columns: 1fr 1.2fr; }
+.about-photo-col { position: sticky; top: 80px; height: calc(100vh - 80px); overflow: hidden; }
+.about-photo-col img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.about-content-col { padding: 80px 64px 80px; }
+.about-name { font-family: var(--font-serif); font-size: clamp(44px, 5vw, 68px); font-weight: 400; line-height: 1; margin-bottom: 40px; }
+.about-bio { font-size: 14px; line-height: 1.9; color: rgba(245,242,237,0.7); margin-bottom: 20px; }
+.skills-section { margin-top: 56px; }
+.skills-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; }
+.skill-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.skill-name { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+.skill-bar-wrap { display: flex; align-items: center; gap: 16px; }
+.skill-bar { width: 160px; height: 1px; background: var(--border); position: relative; }
+.skill-fill { position: absolute; top: 0; left: 0; height: 100%; background: var(--accent); width: 0; transition: width 1.2s cubic-bezier(0.16,1,0.3,1); }
+.skill-pct { font-family: var(--font-mono); font-size: 11px; color: var(--muted); min-width: 36px; text-align: right; }
+.download-cv { display: inline-flex; align-items: center; gap: 12px; margin-top: 48px; padding: 14px 28px; border: 1px solid var(--border); background: none; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); cursor: pointer; transition: all 0.3s; text-decoration: none; }
+.download-cv:hover { background: var(--white); color: var(--bg); border-color: var(--white); }
+
+/* CONTACT */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; padding: 140px 0 0; min-height: 100vh; }
+.contact-left { padding: 0 64px 80px 48px; border-right: 1px solid var(--border); }
+.contact-right { padding: 0 48px 80px 64px; }
+.contact-big-title { font-family: var(--font-serif); font-size: clamp(44px, 5vw, 80px); font-weight: 400; line-height: 0.95; margin-bottom: 48px; }
+.contact-detail { margin-bottom: 36px; }
+.contact-detail-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.contact-detail-value { font-size: 15px; color: var(--white); }
+.form-group { margin-bottom: 36px; }
+.form-label { display: block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border); padding: 10px 0; font-size: 14px; color: var(--white); font-family: var(--font-sans); outline: none; transition: border-color 0.3s; box-sizing: border-box; }
+.form-input::placeholder { color: var(--muted2); }
+.form-input:focus { border-bottom-color: var(--accent); }
+textarea.form-input { resize: none; min-height: 120px; }
+.send-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 32px; background: none; border: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); cursor: pointer; transition: all 0.3s; }
+.send-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; width: 100%; box-sizing: border-box; margin-top: 80px; }
+.footer-logo { font-family: var(--font-serif); font-size: 16px; font-style: italic; }
+.footer-nav { display: flex; gap: 32px; }
+.footer-nav-link { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); cursor: pointer; transition: color 0.3s; }
+.footer-nav-link:hover { color: var(--white); }
+.footer-copy { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  #main-nav { padding: 20px 24px; }
+  .nav-links { gap: 20px; }
+  .hero { padding: 0 24px 60px; }
+  .proj-grid, .portfolio-grid { grid-template-columns: 1fr 1fr; padding: 0 24px; }
+  .section-intro, .page-header, .filter-row { padding-left: 24px; padding-right: 24px; }
+  .about-layout { grid-template-columns: 1fr; }
+  .about-photo-col { height: 60vh; position: relative; top: 0; }
+  .about-content-col { padding: 48px 24px; }
+  .contact-layout { grid-template-columns: 1fr; padding: 120px 24px 0; }
+  .contact-left { border-right: none; border-bottom: 1px solid var(--border); padding: 0 0 48px; }
+  .contact-right { padding: 48px 0 0; }
+  footer { padding: 24px; flex-wrap: wrap; gap: 16px; }
+  .proj-body, .proj-tools { padding: 48px 24px; }
+  .proj-hero-overlay { padding: 40px 24px; }
+  .proj-img-pair { grid-template-columns: 1fr; }
+  .proj-back { display: none; }
+}
+@media (max-width: 600px) {
+  .proj-grid, .portfolio-grid { grid-template-columns: 1fr; }
+  .nav-links { gap: 14px; }
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav style="display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;padding:28px 48px!important;background:rgba(10,10,10,1)!important;z-index:9999!important;box-sizing:border-box!important;">
-  <div class="nav-logo" style="display:block!important;visibility:visible!important;opacity:1!important;color:#ffffff!important;font-weight:600!important;font-size:13px!important;letter-spacing:0.12em!important;cursor:pointer!important;min-width:80px!important;" onclick="showPage('home')">ALESSIA</div>
-  <div class="nav-links" style="display:flex!important;gap:40px!important;">
-    <span class="nav-link active" id="nav-home" onclick="showPage('home')">HOME</span>
-    <span class="nav-link" id="nav-portfolio" onclick="showPage('portfolio')">PORTFOLIO</span>
-    <span class="nav-link" id="nav-about" onclick="showPage('about')">ABOUT</span>
-    <span class="nav-link" id="nav-contact" onclick="showPage('contact')">CONTACT</span>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="main-nav">
+  <div class="nav-logo" onclick="showPage('home')">Alessia Bosio</div>
+  <div class="nav-links">
+    <span class="nav-link active" id="nav-home" onclick="showPage('home')">Home</span>
+    <span class="nav-link" id="nav-portfolio" onclick="showPage('portfolio')">Portfolio</span>
+    <span class="nav-link" id="nav-about" onclick="showPage('about')">About</span>
+    <span class="nav-link" id="nav-contact" onclick="showPage('contact')">Contact</span>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════ HOME ═══ -->
+<!-- ═══ HOME ═══ -->
 <div id="page-home" class="page active">
-
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">ALESSIA</h1>
-      <p class="hero-subtitle">
-        Graphic Designer & 3D Modeler based in Brescia.<br>
-        My style is based primarily on contrast, but not only that: I'm also bold,and above all, incisive.<br>
-        
-      </p>
-      <button class="hero-cta" onclick="showPage('portfolio')">
-        VIEW PORTFOLIO
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.2"/></svg>
-      </button>
+    <div class="hero-counter"><span style="color:var(--accent)">01</span> / Introduction</div>
+    <h1 class="hero-title">Graphic<br>Designer<br><em>&amp; 3D</em></h1>
+    <div class="hero-sub">
+      <p class="hero-desc">Based in Brescia, Italy. Crafting visual narratives at the intersection of fashion, technology, and editorial design.</p>
+      <button class="hero-cta" onclick="showPage('portfolio')">View Work <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.2"/></svg></button>
     </div>
-    <div class="hero-meta">
-      <span>BRESCIA, ITALIA</span>
-      <span>SCROLL TO EXPLORE</span>
-    </div>
+    <div class="hero-scroll">Scroll to explore</div>
   </section>
 
-  <!-- TICKER -->
   <div class="ticker-wrap">
     <div class="ticker">
-      <span>3D MODELING</span><span class="dot">·</span>
-      <span>EDITORIAL</span><span class="dot">·</span>
-      <span>PHOTO RETOUCHING</span><span class="dot">·</span>
-      <span>3D FASHION MODELING </span><span class="dot">·</span>
-      <span>ILLUSTRATION</span><span class="dot">·</span>
-      <span>BRANDING</span><span class="dot">·</span>
-      <!-- duplicate for seamless loop -->
-      <span>3D MODELING</span><span class="dot">·</span>
-      <span>EDITORIAL</span><span class="dot">·</span>
-      <span>PHOTO RETOUCHING</span><span class="dot">·</span>
-      <span>3D FASHION MODELING</span><span class="dot">·</span>
-      <span>ILLUSTRATION</span><span class="dot">·</span>
-      <span>BRANDING</span><span class="dot">·</span>
+      <span>Graphic Design</span><span class="dot">·</span><span>3D Modeling</span><span class="dot">·</span><span>Photo Retouching</span><span class="dot">·</span><span>CLO3D</span><span class="dot">·</span><span>Rhinoceros 8</span><span class="dot">·</span><span>Editorial</span><span class="dot">·</span><span>Branding</span><span class="dot">·</span><span>Brescia, Italia</span><span class="dot">·</span>
+      <span>Graphic Design</span><span class="dot">·</span><span>3D Modeling</span><span class="dot">·</span><span>Photo Retouching</span><span class="dot">·</span><span>CLO3D</span><span class="dot">·</span><span>Rhinoceros 8</span><span class="dot">·</span><span>Editorial</span><span class="dot">·</span><span>Branding</span><span class="dot">·</span><span>Brescia, Italia</span><span class="dot">·</span>
     </div>
   </div>
 
-  <!-- FEATURED -->
-  <div class="featured-header">
-    <div>
-      <p class="section-label">SELECTED WORKS</p>
-      <h2 class="section-title" style="font-size: clamp(40px,5vw,64px);">Featured</h2>
-    </div>
-    <span class="view-all-link" onclick="showPage('portfolio')">
-      VIEW ALL
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.2"/></svg>
-    </span>
+  <div class="section-intro">
+    <div><p class="section-label">Selected Works</p><h2 class="section-title">Featured</h2></div>
+    <span class="view-all" onclick="showPage('portfolio')">View All <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.2"/></svg></span>
   </div>
 
-  <div class="works-grid">
-    <!-- Card 1 -->
-    <div>
-      <div class="work-card">
-        <div class="work-card-img pi-1" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-          <img src="SPIREA SILVER 1920X1080.png" alt="Piercing Collection" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-      </div>
-      <div class="work-card-info">
-        <h3 class="work-card-title">Piercing Collection </h3>
-        <p class="work-card-cat">3D MODELING</p>
-      </div>
-    </div>
-   <!-- Card 2 — split before/after -->
-<div>
-  <div class="work-card">
-    <div class="split-card">
-      <div class="split-half before" style="background:none; padding:0; overflow:hidden;">
-        <img src="DSC_0124.JPG" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="split-divider"></div>
-      <div class="split-half after" style="background:none; padding:0; overflow:hidden;">
-        <img src="DSC_0124_post.jpg" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-      <span class="split-label">AFTER</span>
-    </div>
-  </div>
-  <div class="work-card-info">
-    <h3 class="work-card-title">Editorial Project</h3>
-    <p class="work-card-cat">PHOTO RETOUCHING</p>
-  </div>
-</div>
-    <!-- Card 3 -->
-    <div>
-      <div class="work-card">
-        <div class="work-card-img pi-3" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background-color:rgb(255, 255, 255); overflow:hidden;">
-         <img src="BOX.jpg" alt="Amarena logo" style="width:100%; height:100%; object-fit:cover; border:none; outline:none;">
-        </div>
-      </div>
-      <div class="work-card-info">
-        <h3 class="work-card-title">Amarena logo </h3>
-        <p class="work-card-cat">BRANDING</p>
-      </div>
-    </div>
-  </div>
+  <div class="proj-grid" id="featured-grid"></div>
 
   <footer>
-    <span class="footer-logo">ALESSIA</span>
-    <nav class="footer-nav">
-      <span class="footer-nav-link" onclick="showPage('home')">HOME</span>
-      <span class="footer-nav-link" onclick="showPage('portfolio')">PORTFOLIO</span>
-      <span class="footer-nav-link" onclick="showPage('about')">ABOUT</span>
-      <span class="footer-nav-link" onclick="showPage('contact')">CONTACT</span>
-    </nav>
+    <span class="footer-logo">Alessia Bosio</span>
+    <div class="footer-nav">
+      <span class="footer-nav-link" onclick="showPage('home')">Home</span>
+      <span class="footer-nav-link" onclick="showPage('portfolio')">Portfolio</span>
+      <span class="footer-nav-link" onclick="showPage('about')">About</span>
+      <span class="footer-nav-link" onclick="showPage('contact')">Contact</span>
+    </div>
     <span class="footer-copy">© 2026 — Brescia, Italia</span>
   </footer>
 </div>
 
-<!-- ═══════════════════════════════════════ PORTFOLIO ═══ -->
+<!-- ═══ PORTFOLIO ═══ -->
 <div id="page-portfolio" class="page">
-
-  <div class="section-header" style="padding-top:120px;">
-    <p class="section-label">THE COLLECTION</p>
-    <h1 class="section-title">Portfolio</h1>
-  </div>
-
-  <div class="filter-bar">
-    <button class="filter-btn active" onclick="filterPortfolio('all', this)">ALL</button>
-    <button class="filter-btn" onclick="filterPortfolio('photo-retouching', this)">PHOTO RETOUCHING</button>
-    <button class="filter-btn" onclick="filterPortfolio('3d-modeling', this)">3D MODELING</button>
-    <button class="filter-btn" onclick="filterPortfolio('3d-modeling', this)">3D FASHION MODELING</button>
-    <button class="filter-btn" onclick="filterPortfolio('illustration', this)">ILLUSTRATION</button>
-    <button class="filter-btn" onclick="filterPortfolio('catalog', this)">EDITORIAL</button>
-    <button class="filter-btn" onclick="filterPortfolio('branding', this)">BRANDING</button>
-  </div>
-
-  <div class="portfolio-grid" id="portfolio-grid">
-
-    <!-- Item 1 -->
-    <div class="portfolio-item" data-cat="3d-modeling">
-      <div class="portfolio-item-img pi-1">
-        <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ 3D RENDER ]</span>
-        <div class="portfolio-item-overlay">
-          <p class="overlay-cat">3D MODELING</p>
-          <h3 class="overlay-title">Bijoux Collection SS25</h3>
-          <div class="overlay-tags"><span class="tag">Rhinoceros 8</span><span class="tag">KeyShot</span></div>
-        </div>
-      </div>
-      <div class="portfolio-item-meta">
-        <div>
-          <p class="portfolio-item-title">Bijoux Collection SS25</p>
-          <p class="portfolio-item-cat">3D MODELING</p>
-        </div>
-        <span class="portfolio-item-year">2025</span>
-      </div>
-    </div>
-
-    <!-- Item 2 -->
-    <div class="portfolio-item" data-cat="photo-retouching">
-      <div class="portfolio-item-img" style="position:relative;">
-        <div class="split-card" style="width:100%;height:100%;">
-          <div class="split-half before">BEFORE</div>
-          <div class="split-divider"></div>
-          <div class="split-half after">AFTER</div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <p class="overlay-cat">PHOTO RETOUCHING</p>
-          <h3 class="overlay-title">Beauty Editorial Retouching</h3>
-          <div class="overlay-tags"><span class="tag">Photoshop</span><span class="tag">Lightroom</span></div>
-        </div>
-      </div>
-      <div class="portfolio-item-meta">
-        <div>
-          <p class="portfolio-item-title">Beauty Editorial Retouching</p>
-          <p class="portfolio-item-cat">PHOTO RETOUCHING</p>
-        </div>
-        <span class="portfolio-item-year">2025</span>
-      </div>
-    </div>
-
-    <!-- Item 3 -->
-    <div class="portfolio-item" data-cat="illustration">
-      <div class="portfolio-item-img pi-3">
-        <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ ILLUSTRATION ]</span>
-        <div class="portfolio-item-overlay">
-          <p class="overlay-cat">ILLUSTRATION</p>
-          <h3 class="overlay-title">Botanical Bijoux Illustration</h3>
-          <div class="overlay-tags"><span class="tag">Illustrator</span></div>
-        </div>
-      </div>
-      <div class="portfolio-item-meta">
-        <div>
-          <p class="portfolio-item-title">Botanical Bijoux Illustration</p>
-          <p class="portfolio-item-cat">ILLUSTRATION</p>
-        </div>
-        <span class="portfolio-item-year">2025</span>
-      </div>
-    </div>
-
-    <!-- Item 4 -->
-    <div class="portfolio-item" data-cat="catalog">
-      <div class="portfolio-item-img pi-4">
-        <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ CATALOG ]</span>
-        <div class="portfolio-item-overlay">
-          <p class="overlay-cat">CATALOG / EDITORIAL</p>
-          <h3 class="overlay-title">Luxury Accessories Catalog</h3>
-          <div class="overlay-tags"><span class="tag">InDesign</span><span class="tag">Photoshop</span></div>
-        </div>
-      </div>
-      <div class="portfolio-item-meta">
-        <div>
-          <p class="portfolio-item-title">Luxury Accessories Catalog</p>
-          <p class="portfolio-item-cat">CATALOG / EDITORIAL</p>
-        </div>
-        <span class="portfolio-item-year">2024</span>
-      </div>
-    </div>
-
-    <!-- Item 5 -->
-    <div class="portfolio-item" data-cat="branding">
-      <div class="portfolio-item-img pi-5">
-        <span style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.2);">[ BRANDING ]</span>
-        <div class="portfolio-item-overlay">
-          <p class="overlay-cat">BRANDING</p>
-          <h3 class="overlay-title">Maison Lumière Visual Identity</h3>
-          <div class="overlay-tags"><span class="tag">Illustrator</span><span class="tag">InDesign</span><span class="tag">Photoshop</span></div>
-        </div>
-      </div>
-      <div class="portfolio-item-meta">
-        <div>
-          <p class="portfolio-item-title">Maison Lumière Visual Identity</p>
-          <p class="portfolio-item-cat">BRANDING</p>
-        </div>
-        <span class="portfolio-item-year">2024</span>
-      </div>
-    </div>
-
-  </div>
-
+  <div class="page-header"><p class="section-label">The Collection</p><h1 class="section-title">Portfolio</h1></div>
+  <div class="filter-row" id="filter-row"></div>
+  <div class="portfolio-grid" id="portfolio-grid"></div>
   <footer>
-    <span class="footer-logo">ALESSIA</span>
-    <nav class="footer-nav">
-      <span class="footer-nav-link" onclick="showPage('home')">HOME</span>
-      <span class="footer-nav-link" onclick="showPage('portfolio')">PORTFOLIO</span>
-      <span class="footer-nav-link" onclick="showPage('about')">ABOUT</span>
-      <span class="footer-nav-link" onclick="showPage('contact')">CONTACT</span>
-    </nav>
-    <span class="footer-copy">© 2026 — Milano, Italia</span>
+    <span class="footer-logo">Alessia Bosio</span>
+    <div class="footer-nav">
+      <span class="footer-nav-link" onclick="showPage('home')">Home</span>
+      <span class="footer-nav-link" onclick="showPage('portfolio')">Portfolio</span>
+      <span class="footer-nav-link" onclick="showPage('about')">About</span>
+      <span class="footer-nav-link" onclick="showPage('contact')">Contact</span>
+    </div>
+    <span class="footer-copy">© 2026 — Brescia, Italia</span>
   </footer>
 </div>
 
-<!-- ═══════════════════════════════════════ ABOUT ═══ -->
+<!-- ═══ PROJECT PAGES (generated) ═══ -->
+<div id="project-pages"></div>
+
+<!-- ═══ ABOUT ═══ -->
 <div id="page-about" class="page">
-
-  <div class="section-header" style="padding-top:120px;">
-    <p class="section-label">THE BLUEPRINT</p>
-    <h1 class="section-title">About</h1>
-  </div>
-
-  <div class="about-grid">
-    <!-- Photo -->
-    <div class="about-photo">
-      <div class="about-photo-placeholder">
-        <img src="Foto_cv.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
+  <div style="padding-top:80px;">
+    <div class="about-layout">
+      <div class="about-photo-col"><img src="Foto_cv.jpg" alt="Alessia Bosio"></div>
+      <div class="about-content-col">
+        <p class="section-label">The Blueprint</p>
+        <h2 class="about-name">Alessia<br>Bosio</h2>
+        <p class="about-bio">I'm a graphic designer and 3D modeler based in Brescia — but my mind is always somewhere between a 3D model and a layout. I studied graphic design at the Santa Giulia Academy of Fine Arts, and from there I decided to venture into another field: I'm currently specializing in 3D Fashion Design at the ITS Academy Macchina Lonati, while interning at Barbieri Creazioni S.p.A., an Italian jewelry and fashion accessories company.</p>
+        <p class="about-bio">My favorite place? That strange corner where editorial design meets the technical precision of 3D. Photo editing for catalogs, jewelry models built curve by curve in Rhinoceros 8, digital clothing sewn in CLO3D — every project is a different puzzle, and I can't leave a single piece out of place. Because every shadow in an image, every node in a mesh, every typographic choice tells a story. And I want you to feel it.</p>
+        <div class="skills-section">
+          <p class="skills-label">The Toolkit</p>
+          <div class="skill-row"><span class="skill-name">Adobe Photoshop</span><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div><span class="skill-pct">95%</span></div></div>
+          <div class="skill-row"><span class="skill-name">Adobe Illustrator</span><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div><span class="skill-pct">90%</span></div></div>
+          <div class="skill-row"><span class="skill-name">Adobe InDesign</span><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div><span class="skill-pct">85%</span></div></div>
+          <div class="skill-row"><span class="skill-name">Rhinoceros 8</span><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div><span class="skill-pct">80%</span></div></div>
+          <div class="skill-row"><span class="skill-name">CLO3D</span><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div><span class="skill-pct">75%</span></div></div>
+          <div class="skill-row"><span class="skill-name">Photography</span><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div><span class="skill-pct">85%</span></div></div>
+        </div>
+        <a href="Bosio_Alessia_Cv.pdf" download class="download-cv"><svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1v8M7 9l-3-3M7 9l3-3M1 11h12v2H1z" stroke="currentColor" stroke-width="1.2"/></svg> Download CV</a>
       </div>
     </div>
-
-    <!-- Content -->
-    <div class="about-content">
-      <h2 class="about-name">Alessia</h2>
-      <p class="about-bio">
-      I'm a graphic designer and 3D modeler based in Brescia—but my mind is always somewhere between a 3D model and a layout. <br>
-      I studied graphic design at the Santa Giulia Academy of Fine Arts, and from there I decided to venture into another field: I'm currently specializing in 3D Fashion Design at the ITS Academy Macchina Lonati, while I'm interning at Barbieri Creazioni S.p.A., an Italian jewelry and fashion accessories company.
-</p>
-<p class="about-bio">
-  My favorite place? That strange corner where editorial design meets the technical precision of 3D. Photo editing for catalogs, jewelry models built curve by curve in Rhinoceros 8, digital clothing sewn in CLO3D—every project is a different puzzle, and I can't leave a single piece out of place. <br>
-  I'm obsessed with detail—in the best sense of the word. Because every shadow in an image, every node in a mesh, every typographic choice is never random: it tells a story. And I want you to feel it.
-</p>
-
-      <p class="toolkit-label">THE TOOLKIT</p>
-
-      <div id="skills-container">
-        <div class="skill-row">
-          <span class="skill-name">ADOBE PHOTOSHOP</span>
-          <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="95%"></div></div>
-            <span class="skill-pct">95%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">ADOBE ILLUSTRATOR</span>
-          <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="95%"></div></div>
-            <span class="skill-pct">95%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">ADOBE INDESIGN</span>
-          <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="95%"></div></div>
-            <span class="skill-pct">95%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">RHINOCEROS 8</span>
-          <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="90%"></div></div>
-            <span class="skill-pct">90%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">CLO3D</span>
-          <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="90%"></div></div>
-            <span class="skill-pct">90%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">PHOTOGRAPHY</span>
-          <div class="skill-row-inner">
-            <div class="skill-track"><div class="skill-fill" style="width:0" data-width="85%"></div></div>
-            <span class="skill-pct">85%</span>
-          </div>
-        </div>
-      </div>
-<a href="Bosio_Alessia_Cv.pdf" download>
-  <button class="download-btn">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M7 9l-3-3M7 9l3-3M1 11h12v2H1z" stroke="currentColor" stroke-width="1.2"/></svg>
-    DOWNLOAD CV
-  </button>
-</a>
-    </div>
   </div>
-
   <footer>
-    <span class="footer-logo">ALESSIA</span>
-    <nav class="footer-nav">
-      <span class="footer-nav-link" onclick="showPage('home')">HOME</span>
-      <span class="footer-nav-link" onclick="showPage('portfolio')">PORTFOLIO</span>
-      <span class="footer-nav-link" onclick="showPage('about')">ABOUT</span>
-      <span class="footer-nav-link" onclick="showPage('contact')">CONTACT</span>
-    </nav>
-    <span class="footer-copy">© 2026 — Milano, Italia</span>
+    <span class="footer-logo">Alessia Bosio</span>
+    <div class="footer-nav">
+      <span class="footer-nav-link" onclick="showPage('home')">Home</span>
+      <span class="footer-nav-link" onclick="showPage('portfolio')">Portfolio</span>
+      <span class="footer-nav-link" onclick="showPage('about')">About</span>
+      <span class="footer-nav-link" onclick="showPage('contact')">Contact</span>
+    </div>
+    <span class="footer-copy">© 2026 — Brescia, Italia</span>
   </footer>
 </div>
 
-<!-- ═══════════════════════════════════════ CONTACT ═══ -->
+<!-- ═══ CONTACT ═══ -->
 <div id="page-contact" class="page">
-
-  <div class="section-header" style="padding-top:120px;">
-    <p class="section-label">THE INQUIRY</p>
-    <h1 class="section-title">Contact</h1>
-  </div>
-
-  <div class="contact-grid">
-    <div class="contact-info">
-      <p>Interested in collaborating or have a project in mind? I'd love to hear from you. Fill out the form and I'll respond within 48 hours.</p>
-      <div class="contact-detail">
-        <p class="contact-detail-label">LOCATION</p>
-        <p class="contact-detail-value">Brescia, Italia</p>
-      </div>
-      <div class="contact-detail">
-        <p class="contact-detail-label">AVAILABILITY</p>
-        <p class="contact-detail-value" style="font-weight:500;">Open to freelance & full-time</p>
-      </div>
+  <div class="contact-layout">
+    <div class="contact-left">
+      <p class="section-label">The Inquiry</p>
+      <h2 class="contact-big-title">Let's<br>Work<br>Together</h2>
+      <div class="contact-detail"><p class="contact-detail-label">Location</p><p class="contact-detail-value">Brescia, Italia</p></div>
+      <div class="contact-detail"><p class="contact-detail-label">Availability</p><p class="contact-detail-value">Open to freelance & full-time</p></div>
+      <div class="contact-detail"><p class="contact-detail-label">Email</p><p class="contact-detail-value">alessiabosio2002@gmail.com</p></div>
     </div>
-
-    <div class="contact-form">
+    <div class="contact-right">
       <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
       <script>emailjs.init("VPZMQYmBJN1JjvuCS");</script>
-      <div class="form-group">
-        <label class="form-label">NAME</label>
-        <input type="text" id="name" class="form-input" placeholder="Your name">
-      </div>
-      <div class="form-group">
-        <label class="form-label">EMAIL</label>
-        <input type="email" id="email" class="form-input" placeholder="your@email.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">MESSAGE</label>
-        <textarea id="message" class="form-input" placeholder="Tell me about your project..."></textarea>
-      </div>
-      <button class="submit-btn" onclick="sendEmail()">
-        SEND MESSAGE
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 6-12 6V8.5l8-2.5-8-2.5V1z" stroke="currentColor" stroke-width="1.2"/></svg>
-      </button>
+      <div class="form-group"><label class="form-label">Name</label><input type="text" id="contact-name" class="form-input" placeholder="Your name"></div>
+      <div class="form-group"><label class="form-label">Email</label><input type="email" id="contact-email" class="form-input" placeholder="your@email.com"></div>
+      <div class="form-group"><label class="form-label">Message</label><textarea id="contact-message" class="form-input" placeholder="Tell me about your project..."></textarea></div>
+      <button class="send-btn" onclick="sendEmail()">Send Message <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M1 1l12 6-12 6V8.5l8-2.5-8-2.5V1z" stroke="currentColor" stroke-width="1.2"/></svg></button>
     </div>
   </div>
-
   <footer>
-    <span class="footer-logo">ALESSIA</span>
+    <span class="footer-logo">Alessia Bosio</span>
     <div class="footer-nav">
+      <span class="footer-nav-link" onclick="showPage('home')">Home</span>
+      <span class="footer-nav-link" onclick="showPage('portfolio')">Portfolio</span>
+      <span class="footer-nav-link" onclick="showPage('about')">About</span>
+      <span class="footer-nav-link" onclick="showPage('contact')">Contact</span>
     </div>
     <span class="footer-copy">© 2026 — Brescia, Italia</span>
   </footer>
 </div>
+
 <script>
-  function showPage(id) {
-    // hide all
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+/* ============================================================
+   ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗
+   ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝
+   ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║
+   ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║
+   ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║
+   ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝
 
-    // show target
-    document.getElementById('page-' + id).classList.add('active');
-    document.getElementById('nav-' + id).classList.add('active');
+   ✏️  PER AGGIUNGERE UN PROGETTO:
+   Copia un blocco { ... } qui sotto e aggiorna i campi.
+   
+   CAMPI:
+   id           → identificatore unico (senza spazi)
+   title        → titolo del progetto
+   category     → categoria per il filtro (usa uno di quelli in CATEGORIES)
+   categoryLabel → etichetta visibile (es. "Fashion 3D")
+   year         → anno (stringa, es. "2025")
+   tools        → array di strumenti usati
+   coverImage   → nome file immagine di copertina
+   description  → testo descrittivo del progetto
+   featured     → true = appare anche in home, false = solo portfolio
+   
+   images       → array di oggetti immagine/video nella pagina progetto:
+     { type: 'full', src: 'foto.jpg' }          → immagine piena larghezza
+     { type: 'pair', src: ['a.jpg','b.jpg'] }   → due immagini affiancate
+     { type: 'video', src: 'video.mp4' }        → video piena larghezza
+     { type: 'caption', text: 'Testo' }         → didascalia
+   ============================================================ */
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+const PROJECTS = [
 
-    // animate skill bars when about page opens
-    if (id === 'about') {
-      setTimeout(() => {
-        document.querySelectorAll('.skill-fill').forEach(bar => {
-          bar.style.width = bar.getAttribute('data-width');
-        });
-      }, 200);
-    }
-  }
+  // ── PIERCING HARU ──────────────────────────────────────────
+  {
+    id: 'piercing',
+    title: 'Piercing Haru',
+    category: '3d',
+    categoryLabel: '3D Modeling',
+    year: '2026',
+    tools: ['Rhinoceros 8', 'iJewels', 'KeyShot'],
+    coverImage: 'SPIREA_SILVER_1920X1080.png',
+    featured: true,
+    description: 'A curated piercing collection born from the meeting point of botanical precision and contemporary jewelry design. Each piece — Spirea Silver and Pensieve Gold — was modeled curve by curve in Rhinoceros 8, with gemstone settings crafted in iJewels to achieve photorealistic renders that blur the line between digital object and physical jewel.',
+    images: [
+      { type: 'pair', src: ['SPIREA_SILVER_1920X1080.png', 'PENSIEVE_GOLD_1920X1080.png'] },
+      { type: 'caption', text: 'Spirea Silver · Pensieve Gold' },
+      { type: 'video', src: 'SPIREA_SILVER.mp4' },
+      { type: 'video', src: 'PENSIEVE_GOLD.mp4' },
+    ]
+  },
 
-  // Portfolio filter
-  function filterPortfolio(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+  // ── SHADOW PLAY (SHOOTING PLAYBOY) ─────────────────────────
+  {
+    id: 'shooting',
+    title: 'Shadow Play',
+    category: 'photo',
+    categoryLabel: 'Photography',
+    year: '2025',
+    tools: ['Nikon D3500', 'Adobe Photoshop', 'Lightroom'],
+    coverImage: 'DSC_0124.jpg',
+    featured: true,
+    description: 'A Playboy-inspired editorial shoot exploring the tension between light and shadow, colour and monochrome. Every image was shot with a Nikon D3500 and refined in Photoshop — paired before/after to reveal the full scope of the post-production process: from mood correction to skin retouching and dramatic colour grading.',
+    images: [
+      { type: 'pair', src: ['DSC_0070.jpg', 'DSC_0070.JPG'] },
+      { type: 'caption', text: 'Before · After' },
+      { type: 'pair', src: ['DSC_0124.jpg', 'DSC_0124.JPG'] },
+      { type: 'caption', text: 'Before · After' },
+      { type: 'full', src: 'DSC_0071.jpg' },
+      { type: 'pair', src: ['DSC_0090.jpg', 'DSC_0154.jpg'] },
+      { type: 'full', src: 'DSC_0165.jpg' },
+    ]
+  },
 
-    document.querySelectorAll('.portfolio-item').forEach(item => {
-      if (cat === 'all' || item.dataset.cat === cat) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
+  // ── DARK MATTER (SFILATA CLO3D) ────────────────────────────
+  {
+    id: 'sfilata',
+    title: 'Dark Matter',
+    category: 'fashion',
+    categoryLabel: 'Fashion 3D',
+    year: '2026',
+    tools: ['CLO3D', 'Adobe Photoshop'],
+    coverImage: 'SFILATA.jpg',
+    featured: true,
+    description: 'A digital fashion collection built entirely in CLO3D, exploring the contrast between rigid structure and fluid drape. The centrepiece is a crocodile-embossed black trench coat in dialogue with raw denim detailing — a study in material storytelling where every seam, rivet and chain tells a precise design intention.',
+    images: [
+      { type: 'full', src: 'SFILATA.jpg' },
+      { type: 'video', src: 'BOSIO_ALESSIA.mp4' },
+    ]
+  },
+
+  // ── MANIFESTO ──────────────────────────────────────────────
+  {
+    id: 'manifesto',
+    title: 'Design Manifesto',
+    category: 'graphic',
+    categoryLabel: 'Graphic Design',
+    year: '2024',
+    tools: ['Adobe InDesign', 'Adobe Illustrator', 'Adobe Photoshop'],
+    coverImage: 'Manifesto_Santarelli.jpg',
+    featured: false,
+    description: 'A personal design manifesto translated into a typographic poster — bold, unapologetic, and deeply intentional. Eight principles that define a design philosophy, expressed through contrasting scale, weight, and rhythm. From curiosity as a catalyst to the transformative power of detail, every typographic choice is a statement in itself.',
+    images: [
+      { type: 'full', src: 'Manifesto_Santarelli.jpg' },
+      { type: 'full', src: 'Mockup_Manifesto.jpg' },
+    ]
+  },
+
+  // ── VERDURE (CLO3D VERDE) ──────────────────────────────────
+  {
+    id: 'verdure',
+    title: 'Verdure',
+    category: 'fashion',
+    categoryLabel: 'Fashion 3D',
+    year: '2025',
+    tools: ['CLO3D', 'Adobe Photoshop'],
+    coverImage: 'Esercizio_1.jpg',
+    featured: false,
+    description: 'A monochromatic fashion study immersed in deep forest green — a meditation on texture, volume, and surface. The chunky cable-knit sweater in contrast with smooth cargo shorts demonstrates the power of CLO3D in simulating fabric behaviour with precision: from the irregular mesh of the knitwear to the crisp lines of the cotton shorts.',
+    images: [
+      { type: 'full', src: 'Esercizio_1.jpg' },
+    ]
+  },
+
+  // ── JUNIOR COLLECTION ─────────────────────────────────────
+  {
+    id: 'junior',
+    title: 'Junior Collection',
+    category: 'fashion',
+    categoryLabel: 'Fashion 3D',
+    year: '2025',
+    tools: ['CLO3D', 'Adobe Photoshop'],
+    coverImage: 'Outfit_1_Colorway_1_4.jpg',
+    featured: false,
+    description: 'A 3D fashion collection designed for girls aged 8 to 16, built entirely in CLO3D. The collection balances playful attitude with contemporary style — oversized silhouettes, bold graphic stripes, lace-trimmed details and whimsical bow prints. Each look was developed in multiple colorways, exploring how colour shifts the mood of a design without altering its structure.',
+    images: [
+      { type: 'full', src: 'Outfit_1_Colorway_1_4.jpg' },
+      { type: 'pair', src: ['Outfit_2_Colorway_2_3.jpg', 'Manica_Colorway_2_4.jpg'] },
+    ]
+  },
+
+  /* ────────────────────────────────────────────────────────────
+     ✏️  AGGIUNGI QUI I TUOI PROSSIMI PROGETTI
+     Copia il blocco qui sotto, rimuovi i commenti e compila:
+
+  {
+    id: 'nomeunico',
+    title: 'Titolo Progetto',
+    category: 'fashion',        // photo | 3d | graphic | fashion | branding
+    categoryLabel: 'Fashion 3D',
+    year: '2025',
+    tools: ['CLO3D', 'Photoshop'],
+    coverImage: 'cover.jpg',
+    featured: false,
+    description: 'Descrizione del progetto...',
+    images: [
+      { type: 'full', src: 'immagine1.jpg' },
+      { type: 'pair', src: ['immagine2.jpg', 'immagine3.jpg'] },
+      { type: 'video', src: 'video.mp4' },
+      { type: 'caption', text: 'Didascalia opzionale' },
+    ]
+  },
+  ──────────────────────────────────────────────────────────── */
+
+];
+
+/* ============================================================
+   ⚙️  CATEGORIE — aggiungi nuove categorie qui se serve
+   Formato: { id: 'chiave', label: 'Etichetta visibile' }
+   ============================================================ */
+const CATEGORIES = [
+  { id: 'all',     label: 'All' },
+  { id: 'photo',   label: 'Photography' },
+  { id: '3d',      label: '3D Modeling' },
+  { id: 'graphic', label: 'Graphic Design' },
+  { id: 'fashion', label: 'Fashion 3D' },
+  { id: 'branding',label: 'Branding' },
+];
+
+/* ============================================================
+   🔧  MOTORE — non modificare sotto questa riga
+   ============================================================ */
+
+function footerHTML() {
+  return `<footer>
+    <span class="footer-logo">Alessia Bosio</span>
+    <div class="footer-nav">
+      <span class="footer-nav-link" onclick="showPage('home')">Home</span>
+      <span class="footer-nav-link" onclick="showPage('portfolio')">Portfolio</span>
+      <span class="footer-nav-link" onclick="showPage('about')">About</span>
+      <span class="footer-nav-link" onclick="showPage('contact')">Contact</span>
+    </div>
+    <span class="footer-copy">© 2026 — Brescia, Italia</span>
+  </footer>`;
+}
+
+function renderImagesHTML(images) {
+  return images.map(img => {
+    if (img.type === 'full') return `<div class="proj-img-full"><img src="${img.src}" alt=""></div>`;
+    if (img.type === 'video') return `<div class="proj-img-full"><video autoplay muted loop playsinline><source src="${img.src}" type="video/mp4"></video></div>`;
+    if (img.type === 'pair') return `<div class="proj-img-pair">${img.src.map(s => `<img src="${s}" alt="">`).join('')}</div>`;
+    if (img.type === 'caption') return `<p class="proj-img-caption">${img.text}</p>`;
+    return '';
+  }).join('');
+}
+
+function buildProjectPages() {
+  const container = document.getElementById('project-pages');
+  container.innerHTML = PROJECTS.map(p => `
+    <div id="proj-${p.id}" class="page proj-page">
+      <div class="proj-back" onclick="goBackToPortfolio()">
+        <div class="proj-back-line"></div>Back
+      </div>
+      <div class="proj-hero">
+        <img src="${p.coverImage}" alt="${p.title}">
+        <div class="proj-hero-overlay">
+          <p class="proj-hero-cat">${p.categoryLabel}</p>
+          <h1 class="proj-hero-title">${p.title}</h1>
+          <div class="proj-hero-meta">
+            <div class="proj-meta-item"><label>Year</label><span>${p.year}</span></div>
+            <div class="proj-meta-item"><label>Tools</label><span>${p.tools.join(', ')}</span></div>
+            <div class="proj-meta-item"><label>Category</label><span>${p.categoryLabel}</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-desc">${p.description}</p>
+        <div class="proj-images">${renderImagesHTML(p.images)}</div>
+      </div>
+      <div class="proj-tools">
+        <span class="proj-tools-label">Tools Used</span>
+        <div class="proj-tools-list">${p.tools.map(t => `<span class="proj-tool-tag">${t}</span>`).join('')}</div>
+      </div>
+      ${footerHTML()}
+    </div>
+  `).join('');
+}
+
+function buildPortfolioGrid() {
+  const grid = document.getElementById('portfolio-grid');
+  grid.innerHTML = PROJECTS.map(p => `
+    <div class="port-item" data-cat="${p.category}" onclick="showProject('${p.id}')">
+      <div class="port-item-img">
+        <img src="${p.coverImage}" alt="${p.title}">
+        <div class="port-item-overlay">
+          <p class="port-item-cat">${p.categoryLabel}</p>
+          <p class="port-item-title-ov">${p.title}</p>
+        </div>
+      </div>
+      <div class="port-item-meta">
+        <div>
+          <p class="port-item-name">${p.title}</p>
+          <p class="port-item-cat-label">${p.categoryLabel}</p>
+        </div>
+        <span class="port-item-year">${p.year}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function buildFeaturedGrid() {
+  const grid = document.getElementById('featured-grid');
+  const featured = PROJECTS.filter(p => p.featured).slice(0, 3);
+  grid.innerHTML = featured.map(p => `
+    <div>
+      <div class="proj-card" onclick="showProject('${p.id}')">
+        <div class="proj-card-img">
+          <img src="${p.coverImage}" alt="${p.title}">
+          <div class="proj-card-overlay">
+            <p class="proj-card-cat-ov">${p.categoryLabel}</p>
+            <p class="proj-card-title-ov">${p.title}</p>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card-info">
+        <p class="proj-card-title">${p.title}</p>
+        <p class="proj-card-meta">${p.categoryLabel.toUpperCase()} · ${p.year}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function buildFilters() {
+  const row = document.getElementById('filter-row');
+  row.innerHTML = CATEGORIES.map((c, i) =>
+    `<button class="filter-btn${i===0?' active':''}" onclick="filterPort('${c.id}',this)">${c.label}</button>`
+  ).join('');
+}
+
+function filterPort(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.port-item').forEach(item => {
+    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  const el = document.getElementById('page-' + id);
+  if (el) el.classList.add('active');
+  const nav = document.getElementById('nav-' + id);
+  if (nav) nav.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (id === 'about') setTimeout(() => {
+    document.querySelectorAll('.skill-fill').forEach(b => b.style.width = b.getAttribute('data-width'));
+  }, 300);
+}
+
+function showProject(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  const el = document.getElementById('proj-' + id);
+  if (el) el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goBackToPortfolio() { showPage('portfolio'); }
+
+function sendEmail() {
+  var name = document.getElementById("contact-name").value;
+  var email = document.getElementById("contact-email").value;
+  var message = document.getElementById("contact-message").value;
+  if (!name || !email || !message) { alert("Per favore compila tutti i campi!"); return; }
+  emailjs.send("service_le74kys", "template_3pfj8je", { name, email, message })
+    .then(() => alert("Messaggio inviato! Ti risponderò entro 48 ore."))
+    .catch(() => alert("Errore nell'invio. Riprova più tardi."));
+}
+
+// Custom cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+});
+function animRing() {
+  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+
+// Init
+buildProjectPages();
+buildPortfolioGrid();
+buildFeaturedGrid();
+buildFilters();
 </script>
 </body>
 </html>
