@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alessia Bosio — Studio Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Geist+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050505;
+  --bg2: #0b0b0b;
+  --bg3: #121212;
+  --border: rgba(255,255,255,0.05);
+  --border-bright: rgba(255,255,255,0.15);
+  --white: #f5f2ed;
+  --muted: rgba(245,242,237,0.45);
+  --muted2: rgba(245,242,237,0.15);
+  --accent: #8fae90;
+  --accent-dim: rgba(143,174,144,0.15);
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Geist Mono', monospace;
+  --font-sans: 'DM Sans', sans-serif;
+  --ease-epic: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.6s var(--ease-epic);
+}
+
+/* --- NUOVI STILI CAROSELLO PIERCING --- */
+.proj-carousel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+}
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.carousel-item img, 
+.carousel-item video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: var(--bg3);
+}
+@media (max-width: 768px) {
+  .proj-carousel { grid-template-columns: 1fr; }
+}
+
+/* ... (resto del tuo CSS esistente invariato) ... */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--bg); }
+body { background: var(--bg); color: var(--white); font-family: var(--font-sans); font-size: 14px; line-height: 1.7; overflow-x: hidden; }
+
+/* ... resto del codice ... */
+</style>
+</head>
+<body>
+
+<div class="proj-main-content">
+  
+  <div class="proj-carousel">
+    <div class="carousel-item">
+      <img src="AENIGMA GOLD 1920X1080.jpg" alt="Aenigma Gold">
+      <video src="AENIGMA GOLD.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="carousel-item">
+      <img src="AENIGMA SILVER 1920X1080.jpg" alt="Aenigma Silver">
+      <video src="AENIGMA SILVER.mp4" autoplay loop muted playsinline></video>
+    </div>
+  </div>
+
+  <div class="proj-carousel">
+    <div class="carousel-item">
+      <img src="CAMELIA GOLD 1920X1080.jpg" alt="Camelia Gold">
+      <video src="CAMELIA GOLD.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="carousel-item">
+      <img src="CAMELIA SILVER 1920X1080.jpg" alt="Camelia Silver">
+      <video src="CAMELIA SILVER.mp4" autoplay loop muted playsinline></video>
+    </div>
+  </div>
+
+  <div class="proj-carousel">
+    <div class="carousel-item">
+      <img src="DAHLIA GOLD 1920X1080.jpg" alt="Dahlia Gold">
+      <video src="DAHLIA GOLD.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="carousel-item">
+      <img src="DAHLIA GOLD 1920X1080.jpg" alt="Dahlia Info"> 
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
